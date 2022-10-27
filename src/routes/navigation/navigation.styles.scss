@@ -18,12 +18,13 @@
     padding-right: 20px;
 
     h2 {
-      font-family: 'Fasthand', cursive;
+      font-family: Fasthand, cursive;
     }
   }
 
   .nav-links-container {
     margin-top: 100px;
+
     .nav-link {
       cursor: pointer;
       display: block;
@@ -32,7 +33,7 @@
       font-size: 20px;
 
       &:hover {
-        background-color: rgb(120, 195, 50);
+        background-color: rgb(120 195 50);
         color: white;
       }
     }
