@@ -9,10 +9,14 @@ const Navigation = () => {
     <>
       <div className="navigation">
         <Link className="logo-container" to="/">
-          <img className="logo" src={brand} alt="house" width={50} />
+          <img className="logo" src={brand} alt="house" width={30} height={30} />
+          <h2>House rental</h2>
         </Link>
 
         <div className="nav-links-container">
+          <Link className="nav-link" to="/">
+            HOUSES
+          </Link>
           <Link className="nav-link" to="/auth">
             SIGN IN
           </Link>
