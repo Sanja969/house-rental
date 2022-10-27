@@ -17,11 +17,24 @@ const Navigation = () => {
           <Link className="nav-link" to="/">
             HOUSES
           </Link>
+          <Link className="nav-link" to="/reserve">
+            RESERVE
+          </Link>
+          <Link className="nav-link" to="/my-reservation">
+            MY RESERVATIONS
+          </Link>
+          <Link className="nav-link" to="/add-house">
+            ADD HOUSE
+          </Link>
+          <Link className="nav-link" to="/delete-house">
+            DELETE HOUSE
+          </Link>
           <Link className="nav-link" to="/auth">
             SIGN IN
           </Link>
         </div>
       </div>
+      
       <Outlet />
     </>
   );
