@@ -1,37 +1,58 @@
 import React from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { saveUser } from '../../redux/user';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 import './sign-up.styles.scss';
 
 const SignUp = () => {
-  let name = '';
-  let password = '';
-  let passwordConf = '';
+
+  const navigate = useNavigate();
+
+  const gotToHome = () => {
+    navigate('/');
+  };
+
+  const defaultFormFields = {
+    name: '',
+    email: '',
+    password: '',
+    passwordConf: '',
+  };
+
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const {
+    name,
+    email,
+    password,
+    passwordConf,
+  } = formFields;
+
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
 
   const dispatch = useDispatch();
 
-  const createUser = (name, password, passwordConf) => dispatch(saveUser({
+  const createUser = (name,email, password, passwordConf) => dispatch(saveUser({
     name,
+    email,
     password,
     passwordConf,
   }));
 
-  const addName = (e) => {
-    name = e.target.value;
-  };
-
-  const addPassword = (e) => {
-    password = e.target.value;
-  };
-
-  const addPasswordConf = (e) => {
-    passwordConf = e.target.value;
-  };
 
   const submitUser = () => {
-    createUser(name, password, passwordConf);
+    createUser(name, email, password, passwordConf);
+    resetFormFields();
+    gotToHome();
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormFields({ ...formFields, [name]: value });
   };
 
   return (
@@ -39,9 +60,10 @@ const SignUp = () => {
       <h2>Don&apos;t have an account?</h2>
       <span>Sign Up</span>
       <form>
-        <FormInput type="text" name="username" onChange={addName} label="Username" value={name} required />
-        <FormInput type="password" name="password" onChange={addPassword} label="Password" value={name} required  />
-        <FormInput type="password" name="password_confirmation" onChange={addPasswordConf} label="Confirm Password" value={name} required />
+        <FormInput type="text" name="name" onChange={handleChange} label="Username" value={name} required />
+        <FormInput type="text" name="email" onChange={handleChange} label="Email" value={email} required />
+        <FormInput type="password" name="password" onChange={handleChange} label="Password" value={password} required  />
+        <FormInput type="password" name="passwordConf" onChange={handleChange} label="Confirm Password" value={passwordConf} required />
         <Button type="submit" onClick={submitUser}>SIGN UP</Button>
       </form>
     </div>
