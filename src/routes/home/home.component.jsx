@@ -3,8 +3,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import {getHouses} from '../../redux/home'
 
-// const house = useSelector(state => state);
-// console.log(house);
 
 const Home = () => {
  
