@@ -16,7 +16,15 @@ const homeReducer = (state = initialState, {type, payload}) => {
 export default homeReducer;
 
 
-
+export const getHouses = () => async(dispatch) => { 
+    const response = await fetch(url);
+    const houses = await response.json();
+    
+    dispatch({
+        type: GET_HOUSES,
+        payload: houses
+    })
+}
 
 // Path: src/redux/store.js
 // Compare this snippet from src/redux/store.js:
