@@ -4,6 +4,18 @@ const GET_HOUSES = "GET_HOUSES"
 
 const initialState = []
 
+const homeReducer = (state = initialState, {type, payload}) => {
+    switch (type) {
+        case GET_HOUSES:
+        return payload 
+        default:
+        return state;
+    }
+}
+
+export default homeReducer;
+
+
 
 
 // Path: src/redux/store.js
