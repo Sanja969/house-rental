@@ -1,4 +1,35 @@
 .all-houses {
     display: flex;
     flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.home-title {
+    text-align: center;
+}
+
+.prev {
+    margin-left: 0;
+    height: 50px;
+    width: 50px;
+    background-color: #f5f5f5;
+    border-radius: 50% 0 0 50%;; 
+}
+
+.next-arrow {
+    display: flex;
+    align-items: center;
+}
+
+.back-arrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 40%;
+}
+
+.prev:hover {
+    background-color: rgb(120 195 50);
 }
