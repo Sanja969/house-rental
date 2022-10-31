@@ -1,6 +1,7 @@
 import React from "react"
 import { PropTypes } from 'prop-types';
-
+import './home-page.css';
+import { FiFacebook, FiTwitter, FiInstagram} from "react-icons/fi";
 
 export default function HomePage({
     List: {  id, name, image_data},
@@ -8,9 +9,14 @@ export default function HomePage({
 
 {
   return (
-    <div id={id}>
-     <img src={image_data} alt={name} />
-     <p>{name}</p>
+    <div id={id} className="house">
+     <img src={image_data} alt={name}  className="home-image"/>
+     <h3>{name}</h3>
+     <ul className="social-midia">
+         <li><FiFacebook/></li>
+        <li><FiTwitter/></li>
+        <li><FiInstagram/></li>
+     </ul>
     </div>
   )
 }

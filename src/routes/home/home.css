@@ -3,7 +3,7 @@
     flex-direction: row;
     gap: 20px;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 7%;
 }
 
 .home-title {
@@ -15,21 +15,34 @@
     height: 50px;
     width: 50px;
     background-color: #f5f5f5;
-    border-radius: 50% 0 0 50%;; 
+    border-radius: 55% 0 0 50%;; 
+}
+
+.next {
+    margin-right: 0;
+    height: 50px;
+    width: 60px;
+    background-color: #f5f5f5;
+    border-radius: 0 50% 50% 0;
 }
 
 .next-arrow {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    padding-top: 55%;
 }
 
 .back-arrow {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: 40%;
+    padding-top: 50%;
 }
 
 .prev:hover {
+    background-color: rgb(120 195 50);
+}
+
+.next:hover {
     background-color: rgb(120 195 50);
 }
