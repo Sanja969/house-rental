@@ -1,0 +1,4 @@
+.all-houses {
+    display: flex;
+    flex-direction: row;
+}
