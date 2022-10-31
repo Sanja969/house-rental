@@ -1,41 +1,105 @@
-.navigation {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  padding: 40px 0 40px 20px;
-  transition: 0.5s;
-  border-right: 1px solid black;;
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-  .logo-container {
+$primary-color: #97BF0F;
+
+.navbar {
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.menu-bars {
+  margin-left: 2rem;
+  background: none;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.ham {
+  background-color: $primary-color;
+  padding: 7px 10px 0;
+  border-radius: 10px;
+  color: #fff
+}
+
+.nav-menu {
+  background-color: #fff;
+  width: 250px;
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0 8px 16px;
+  list-style: none;
+  height: 60px;
+  letter-spacing: 0.1rem;
+  
+  
+  a {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 200;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding-right: 20px;
-
-    h2 {
-      font-family: Fasthand, cursive;
+    padding: 0 16px;
+    gap: 10px;
+    border-radius: 4px;
+    
+    &:hover {
+      background-color: $primary-color;
+      color: #fff;
     }
   }
+}
 
-  .nav-links-container {
-    margin-top: 100px;
+.nav-menu-items {
+  width: 100%;
+}
 
-    .nav-link {
-      cursor: pointer;
-      display: block;
-      padding: 20px 0 20px 20px;
-      font-weight: 800;
-      font-size: 20px;
+.navbar-toggle {
+  background-color: $primary-color;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
 
-      &:hover {
-        background-color: rgb(120 195 50);
-        color: white;
-      }
-    }
+span {
+  margin-left: 10px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 20px;
+  gap: 13px;
+
+  h2 {
+    font-family: Fasthand, cursive;
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: #fff;
   }
 }
