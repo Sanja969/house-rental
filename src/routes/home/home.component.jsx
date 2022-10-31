@@ -58,10 +58,11 @@ const Home = () => {
   return (
     <div>
       <h1 className="home-title">List of Houses</h1>
+      <p className='home-paragraph'>Please select a house</p>
       <div className="all-houses">
       <div className="prev" onClick={prev}>
        <div className="back-arrow">
-      < AiFillCaretLeft/>
+      < AiFillCaretLeft />
       </div>
       </div>
   
@@ -69,9 +70,7 @@ const Home = () => {
       tophouses.map((item) => (<HomePage key={item.id} List={item} />))
       }
       <div className="next" onClick={next}>
-        <div className="next-arrow">
-       < AiFillCaretRight />
-       </div>
+       < AiFillCaretRight  className={'next-arrow'}/>
       </div>        
       </div>
     </div>

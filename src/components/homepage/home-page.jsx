@@ -11,11 +11,11 @@ export default function HomePage({
   return (
     <div id={id} className="house">
      <img src={image_data} alt={name}  className="home-image"/>
-     <h3>{name}</h3>
-     <ul className="social-midia">
-         <li><FiFacebook/></li>
-        <li><FiTwitter/></li>
-        <li><FiInstagram/></li>
+     <h3>{name}</h3><hr className="hr-home-name"/>
+     <ul className="social-media">
+         <li className="social-item"><FiFacebook/></li>
+        <li  className="social-item"><FiTwitter/></li>
+        <li  className="social-item"><FiInstagram/></li>
      </ul>
     </div>
   )
