@@ -1,0 +1,54 @@
+$primary-color: #97BF0F;
+
+.home-title,
+.home-paragraph,
+.dashes {
+  text-align: center;
+}
+
+.home-paragraph {
+  color: grey;
+}
+
+.dashes {
+  margin-top: 40px;
+  color:grey;
+}
+
+.houses-box {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .prev,
+  .next {
+    display: flex;
+    height: 50px;
+    width: 80px;
+    background-color: #f5f5f5;
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+
+  .prev {
+    border-radius: 0 25px 25px 0;
+  }
+
+  .next {
+    border-radius: 25px 0 0 25px;
+  }
+
+  .back-arrow  {
+    margin: auto 20px auto 40px;
+    display: block;
+  }
+
+  .next-arrow {
+    margin: auto 40px auto 20px;
+    display: block;
+  }
+}
+
+

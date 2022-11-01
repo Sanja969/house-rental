@@ -2,16 +2,13 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import {getHouses} from '../../redux/home'
-import HomePage from '../../components/homepage/home-page';
-import './home.css';
+import House from '../../components/house/house.component';
+import './home.styles.scss';
 import { AiFillCaretRight, AiFillCaretLeft } from "react-icons/ai";
 
-
 const Home = () => {
-  const [list, setValue] = useState({
-    i: 0,
-    n: 3,
-  });
+  const firstThree = {i: 0, n: 3,}
+  const [indexes, setIndexes] = useState(firstThree);
  
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,58 +17,41 @@ const Home = () => {
 
   const house = useSelector((state) => state.house);
 
-  const tophouses = house.slice(list.i, list.n);
+  const display_houses = house.slice(indexes.i, indexes.n);
 
   const next = () => {
-    if (list.n < house.length) {
-      setValue({
-        i: list.i + 3,
-        n: list.n + 3,
-      });
+    if (indexes.n < house.length) {
+      setIndexes({i: indexes.i + 3, n: indexes.n + 3,});
     }
     else {
-      setValue({
-        i: 0,
-        n: 3,
-      });
+      setIndexes(firstThree);
     }   
   };
 
   const prev = () => {
-    if (list.i > 0) {
-      setValue({
-        i: list.i - 3,
-        n: list.n - 3,
-      });
+    if (indexes.i > 3) {
+      setIndexes({i: indexes.i - 3, n: indexes.n - 3,});
     }
     else {
-      setValue({
-        i: 0,
-        n: 3,
-      });
+      setIndexes(firstThree);
     }
   };
 
-  
-
-
   return (
-    <div>
-      <h1 className="home-title">List of Houses</h1>
+    <div className='home'>
+      <h1 className="home-title">Latest Houses</h1>
       <p className='home-paragraph'>Please select a house</p>
-      <div className="all-houses">
-      <div className="prev" onClick={prev}>
-       <div className="back-arrow">
-      < AiFillCaretLeft />
-      </div>
-      </div>
-  
-      {
-      tophouses.map((item) => (<HomePage key={item.id} List={item} />))
-      }
-      <div className="next" onClick={next}>
-       < AiFillCaretRight  className={'next-arrow'}/>
-      </div>        
+      <p className='dashes'>----------------------------</p>
+      <div className="houses-box">
+        <div className="prev" onClick={prev}>
+          < AiFillCaretLeft className="back-arrow"/>
+        </div>
+        {
+        display_houses.map((house) => (<House key={house.id} house={house} />))
+        }
+        <div className="next" onClick={next}>
+        < AiFillCaretRight  className='next-arrow'/>
+        </div>        
       </div>
     </div>
 
