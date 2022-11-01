@@ -5,6 +5,7 @@ import Navigation from './routes/navigation/navigation.component.jsx';
 import Home from './routes/home/home.component.jsx';
 import HomeDetail from './routes/home-detail/home-detail.jsx';
 import Authentication from './routes/authentication/authentication.component';
+import Reserve from './routes/reserve/reserve.component';
 
 const App = () => (
   <Routes>
@@ -12,6 +13,7 @@ const App = () => (
       <Route index element={<Home />} />
       <Route path="house" element={<HomeDetail />} />
       <Route path="auth" element={<Authentication />} />
+      <Route path="reserve" element={<Reserve />} />
     </Route>
   </Routes>
 );
