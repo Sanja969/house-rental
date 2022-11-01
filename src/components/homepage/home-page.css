@@ -1,8 +1,8 @@
 .house {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
 }
 
 .home-image {
@@ -12,16 +12,16 @@
 }
 
 .social-media {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    gap: 20px;
-    margin-left: -40px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 20px;
+  margin-left: -40px;
 }
 
 .hr-home-name {
-    width: 60%;
-    border: 0;
-    border-bottom: 1px dashed #ccc;
-    background: #999;
+  width: 60%;
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #999;
 }
