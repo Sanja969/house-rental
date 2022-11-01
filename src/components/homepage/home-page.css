@@ -2,13 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
     margin-top: 40px;
 }
 
 .home-image {
-  height: 200px;
-  width: 270px;
+  height: 240px;
+  width: 290px;
   border-radius: 5%;
 }
 
