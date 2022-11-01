@@ -1,0 +1,51 @@
+.all-houses {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  margin-top: 4%;
+  margin-left: 17%;
+  justify-content: center;
+}
+
+.home-title {
+  text-align: center;
+}
+
+.prev {
+  display: flex;
+  height: 50px;
+  width: 40px;
+  background-color: #f5f5f5;
+  border-radius: 50% 0 0 50%;
+}
+
+.next {
+  display: flex;
+  height: 50px;
+  width: 40px;
+  background-color: #f5f5f5;
+  border-radius: 0 50% 50% 0;
+}
+
+.next-arrow {
+  margin: auto;
+  display: block;
+}
+
+.back-arrow {
+  margin: auto;
+  display: block;
+}
+
+.prev:hover {
+  background-color: rgb(120 195 50);
+}
+
+.next:hover {
+  background-color: rgb(120 195 50);
+}
+
+.home-paragraph {
+  text-align: center;
+}
