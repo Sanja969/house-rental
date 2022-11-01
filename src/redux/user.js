@@ -2,15 +2,14 @@ const url1 = 'http://127.0.0.1:3000/users'
 const url2 = 'http://127.0.0.1:3000/auth/login'
 const POST_USER = 'POST_USER';
 const AUTH_USER = 'AUTH_USER';
-const initialState = {};
-
+const initialState = localStorage.getItem('user');
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case POST_USER:
-      return action.username;
+      return action;
     case AUTH_USER:
-      return action.username;
+      return action;
     default:
       return state;
   }
@@ -33,6 +32,7 @@ export const saveUser = (user) => async(dispatch) => {
       },
     });
     const userData = await response.json();
+    localStorage.setItem('user', JSON.stringify(userData))
   dispatch({
     type: POST_USER,
     userData
@@ -51,11 +51,11 @@ export const authUser = (user) => async(dispatch) => {
        "Content-Type": "application/json"
       },
     });
-  const username = await response.json();
-
+    const userData = await response.json();
+    localStorage.setItem('user', JSON.stringify(userData))
 
   dispatch({
     type: AUTH_USER,
-    username
+    userData
   })
 }
