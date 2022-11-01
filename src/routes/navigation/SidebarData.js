@@ -41,7 +41,7 @@ export const SidebarData = [
     },
     {
         title: "Sign In",
-        path: "/auth/login",
+        path: "/auth",
         icon: <IoIcons.IoIosLogIn />,
         cName: "nav-text"
     },
