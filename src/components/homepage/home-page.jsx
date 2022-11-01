@@ -1,6 +1,7 @@
 import React from "react"
 import { PropTypes } from 'prop-types';
 import './home-page.css';
+import { Link } from 'react-router-dom';
 import { FiFacebook, FiTwitter, FiInstagram} from "react-icons/fi";
 
 export default function HomePage({
@@ -9,8 +10,10 @@ export default function HomePage({
 
 {
   return (
-    <div id={id} className="house">
+    <div  className="house">
+      <Link to='/house' id={id}>
      <img src={image_data} alt={name}  className="home-image"/>
+      </Link>
      <h3>{name}</h3><hr className="hr-home-name"/>
      <ul className="social-media">
          <li className="social-item"><FiFacebook/></li>
