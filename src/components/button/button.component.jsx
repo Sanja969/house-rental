@@ -7,6 +7,7 @@ import './button.styles.scss';
 const BUTTON_TYPE_CLASSES = {
   inverted: 'inverted',
   logIn: 'log-in',
+  reserve: 'reserve'
 };
 
 const Button = ({ children, buttonType, ...otherProps }) => (
