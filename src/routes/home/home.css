@@ -4,6 +4,8 @@
   gap: 20px;
   align-items: center;
   margin-top: 4%;
+  margin-left: 15%;
+  justify-content: center;
 }
 
 .home-title {

@@ -22,7 +22,7 @@ export const getHouses = () => async(dispatch) => {
     
     dispatch({
         type: GET_HOUSES,
-        payload: houses 
+        payload: houses
     })
 }
 
