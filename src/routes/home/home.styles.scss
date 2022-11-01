@@ -21,6 +21,14 @@ $primary-color: #97BF0F;
   align-items: center;
   justify-content: space-between;
 
+  .prev {
+    border-radius: 0 25px 25px 0;
+  }
+
+  .next {
+    border-radius: 25px 0 0 25px;
+  }
+
   .prev,
   .next {
     display: flex;
@@ -30,14 +38,6 @@ $primary-color: #97BF0F;
     &:hover {
       background-color: $primary-color;
     }
-  }
-
-  .prev {
-    border-radius: 0 25px 25px 0;
-  }
-
-  .next {
-    border-radius: 25px 0 0 25px;
   }
 
   .back-arrow  {
