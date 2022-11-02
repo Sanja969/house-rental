@@ -1,7 +1,11 @@
-.image-detail {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+.home-detail {
+    display: flex;
+    flex-direction: column;
+}
 
+.details-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
 }
