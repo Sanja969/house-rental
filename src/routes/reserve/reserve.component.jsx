@@ -8,25 +8,24 @@ import './reserve.styles.scss';
 const Reserve = () => {
     const [availableHouses, setAvailableHouses] = useState([]);
     const [startDate, setStartDate] = useState(new Date());
+
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(getHouses());
     }, []);
 
     const houses = useSelector((state) => state.house);
 
-    const handleSubmit = () => {
-        console.log('submit');
-        console.log(startDate);
-        const availableHouses = houses
+    const handleSubmit = (houses) => {
+        setAvailableHouses(houses);
     }
 
     if (availableHouses.length > 0) {
         return (
             <HousePick
-                availableHouses={availableHouses}
+                houses={houses}
                 startDate={startDate}
-                setAvailableHouses={setAvailableHouses}
             />
         )
     }
@@ -35,7 +34,9 @@ const Reserve = () => {
         <DatePick
             startDate={startDate}
             setStartDate={setStartDate}
-            setAvailableHouses={setAvailableHouses}
+            setAvailableHouses={availableHouses}
+            houses = {houses}
+            handleSubmit={handleSubmit}
         />
     );
 }

@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-const HousePick = ({ availableHouses }) => {
+
+const HousePick = () => {
     const [selectedHouse, setSelectedHouse] = useState(null);
+    const houses = useSelector((state) => state.house);
     return (
         <div className="reserve">
             <h1>Choose your desired house</h1>
             <p>Reservations will be depending on the availability of the houses</p>
             <div className="houses">
-                {availableHouses.map((house) => (
+                {houses.map((house) => (
                     <div className="house" key={house.id}>
                         <div className="house-image">
                             <img src={house.image} alt={house.name} />

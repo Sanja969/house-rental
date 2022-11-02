@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
+import { useSelector } from 'react-redux';
+
 import './reserve.styles.scss';
 
-const DatePick = ({handleSubmit}) => {
+const DatePick = () => {
     const [error, setError] = useState(null);
     const [startDate, setStartDate] = useState(new Date());
     const [loading, setLoading] = useState(false);
+    const houses = useSelector((state) => state.house);
     return (
         <div className="reserve">
             <h1>Choose your desired staying period</h1>
@@ -14,8 +17,7 @@ const DatePick = ({handleSubmit}) => {
                 e.preventDefault();
                 setLoading(true);
                 setError(null);
-                handleSubmit(startDate);
-                
+                handleSubmit(houses);
                 // availability(setError, setAvailableHouses, startDate, setLoading);
             }}>
                 <p className="text-danger mb-1 ">
