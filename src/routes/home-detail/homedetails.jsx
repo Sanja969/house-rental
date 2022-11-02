@@ -21,7 +21,9 @@ export default function HomeDetail () {
                <Link to='/' >
                   < AiFillCaretLeft />
                </Link>
-               <button>Reserve</button>
+               <Link to='/reserve' >
+                  <button>Reserve</button>
+               </Link>
             </div>
         </div>
     )
