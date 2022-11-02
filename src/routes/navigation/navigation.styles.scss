@@ -7,7 +7,7 @@ $primary-color: #97BF0F;
   height: 80px;
   display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: center;  
 }
 
 .menu-bars {
@@ -39,6 +39,7 @@ $primary-color: #97BF0F;
 .nav-menu.active {
   left: 0;
   transition: 350ms;
+  z-index: 1;
 }
 
 .nav-text {
