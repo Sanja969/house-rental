@@ -10,7 +10,7 @@ export default function HomeDetail () {
         <div>
             <h1>Home Detail</h1>
              <h2>{house.name}</h2>
-            <img src={house.image_data} alt={house.name} />
+            <img className='image-detail' src={house.image_data} alt={house.name} />
             <p>{house.description}</p>
         </div>
     )
