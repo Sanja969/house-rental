@@ -2,6 +2,8 @@ import React from "react"
 import { PropTypes } from 'prop-types';
 import './home-page.css';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {getHousesDetails} from '../../redux/home'
 import { FiFacebook, FiTwitter, FiInstagram} from "react-icons/fi";
 
 export default function HomePage({
@@ -9,10 +11,20 @@ export default function HomePage({
 })
 
 {
+
+    const dispatch = useDispatch();
+    const handleDetails = (e) => {
+      
+         const id = parseInt(e.target.id)
+         
+        dispatch(getHousesDetails(id));
+    }
+
+
   return (
     <div  className="house">
-      <Link to='/house' id={id}>
-     <img src={image_data} alt={name}  className="home-image"/>
+      <Link to='/house' >
+     <img src={image_data} alt={name}  className="home-image" id={id}  onClick={handleDetails} />
       </Link>
      <h3>{name}</h3><hr className="hr-home-name"/>
      <ul className="social-media">
