@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
-import * as BsIcons from "react-icons/bs";
 import './reserve.styles.scss';
 
-const DatePick = () => {
-    const [startDate, setStartDate] = useState(new Date());
+const DatePick = ({handleSubmit}) => {
     const [error, setError] = useState(null);
+    const [startDate, setStartDate] = useState(new Date());
     const [loading, setLoading] = useState(false);
     return (
         <div className="reserve">
@@ -13,6 +12,10 @@ const DatePick = () => {
             <p>Reservations will be depending on the availability of the houses</p>
             <form onSubmit={(e) => {
                 e.preventDefault();
+                setLoading(true);
+                setError(null);
+                handleSubmit(startDate);
+                
                 // availability(setError, setAvailableHouses, startDate, setLoading);
             }}>
                 <p className="text-danger mb-1 ">
@@ -37,7 +40,6 @@ const DatePick = () => {
                         </button>
                     )
                 }
-                    <BsIcons.BsFillCalendarDateFill />
                 </div>
             </form>    
         

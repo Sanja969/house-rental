@@ -7,24 +7,36 @@ import './reserve.styles.scss';
 
 const Reserve = () => {
     const [availableHouses, setAvailableHouses] = useState([]);
-    
+    const [startDate, setStartDate] = useState(new Date());
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getHouses());
     }, []);
 
-    const house = useSelector((state) => state.house);
+    const houses = useSelector((state) => state.house);
 
-    console.log(house);
+    const handleSubmit = () => {
+        console.log('submit');
+        console.log(startDate);
+        const availableHouses = houses
+    }
 
     if (availableHouses.length > 0) {
         return (
-            <HousePick availableHouses={availableHouses} />
+            <HousePick
+                availableHouses={availableHouses}
+                startDate={startDate}
+                setAvailableHouses={setAvailableHouses}
+            />
         )
     }
 
     return (
-        <DatePick />
+        <DatePick
+            startDate={startDate}
+            setStartDate={setStartDate}
+            setAvailableHouses={setAvailableHouses}
+        />
     );
 }
 
