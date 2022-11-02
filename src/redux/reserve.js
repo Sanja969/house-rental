@@ -13,8 +13,6 @@ const reserveReducer = (state = initialState, { type, payload }) => {
     }
 }
 
-export default reserveReducer;
-
 export const postReservation = (reservation) => async (dispatch) => {
     const response = await fetch(url,
         {
@@ -36,3 +34,5 @@ export const postReservation = (reservation) => async (dispatch) => {
         payload: reservationData
     })
 }
+
+export default reserveReducer;
