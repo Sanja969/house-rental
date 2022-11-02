@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Select from 'react-select'
 import { useDispatch, useSelector } from 'react-redux';
 import DatePicker from "react-datepicker";
+import * as BsIcons from "react-icons/bs";
 import { getHouses } from '../../redux/home';
 import './reserve.styles.scss';
 
 const Reserve = () => {
     const [availableHouses, setAvailableHouses] = useState([]);
-    const [startDate, setStartDate] = useState(new Date());
+    const [dateRange, setDateRange] = useState([null, null]);
+    const [startDate, endDate] = dateRange;
     const [selectedHouse, setSelectedHouse] = useState(null);
     const [selectedCity, setSelectedCity] = useState(null);
     const [error, setError] = useState(null);
@@ -36,9 +38,15 @@ const Reserve = () => {
         // )
     }
 
+    const changeLayout = () => {
+        setAvailableHouses([]);
+        setLoading(false)
+    }
+
     if (availableHouses.length > 0) {
         return (
             <div className="reserve">
+                <BsIcons.BsFillArrowLeftSquareFill className="back" onClick={changeLayout} />
                 <h1>Choose your desired house</h1>
                 <p>Reservations will be depending on the availability of the houses</p>
                 <div className="houses">
@@ -66,6 +74,7 @@ const Reserve = () => {
     }
 
     return (
+
         <div className="reserve">
             <h1>Choose your desired period and city of residence</h1>
             <p>Reservations will be depending on the availability of the houses</p>
@@ -79,13 +88,16 @@ const Reserve = () => {
                 <p className="text-danger mb-1 ">
                     {error && error.message}
                 </p>
-                <Select className="selectbox" options={cities} onChange={setSelectedCity} c />
+                <p>Desired city of residence</p>
+                <Select className="selectbox" options={cities} onChange={setSelectedCity} />
                 <div className="date-picker">
                     <DatePicker
-                        selected={startDate}
-                        onChange={(date) => {
-                            setStartDate(date);
-                            setError(null);
+                        selectsRange={true}
+                        placeholderText="Select your desired period"
+                        startDate={startDate}
+                        endDate={endDate}
+                        onChange={(update) => {
+                          setDateRange(update);
                         }}
                         withPortal
                     />
