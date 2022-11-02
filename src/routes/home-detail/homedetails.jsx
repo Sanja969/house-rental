@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector} from 'react-redux';
-
+import './homedetails.css';
 
 
 export default function HomeDetail () {
