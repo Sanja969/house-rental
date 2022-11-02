@@ -1,11 +1,22 @@
 .home-detail {
     display: flex;
     flex-direction: column;
+    margin-left: 20%;
 }
 
 .details-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.image-detail {
+    border-radius: 5%;
+}
+
+.detail-about {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-   
+    flex-direction: column;
+    margin-right: 20%;
+    gap: 25px;
 }
