@@ -1,3 +1,5 @@
+$primary-color: #97BF0F;
+
 .button-container {
   min-width: 165px;
   width: auto;
@@ -22,24 +24,12 @@
   }
 
   &.log-in {
-    background-color: #4285f4;
+    background-color: $primary-color;
     color: white;
 
     &:hover {
-      background-color: #357ae8;
-      border: none;
-    }
-  }
-
-  &.inverted {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-
-    &:hover {
-      background-color: black;
-      color: white;
-      border: none;
+      background-color: white;
+      color: black;
     }
   }
 }
