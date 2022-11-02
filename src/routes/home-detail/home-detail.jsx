@@ -9,7 +9,9 @@ export default function HomeDetail () {
     return (
         <div>
             <h1>Home Detail</h1>
-            
+             <h2>{house.name}</h2>
+            <img src={house.image_data} alt={house.name} />
+            <p>{house.description}</p>
         </div>
     )
 }
