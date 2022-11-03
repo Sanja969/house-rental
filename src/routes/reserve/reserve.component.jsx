@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import * as BsIcons from "react-icons/bs";
 import { getHouses } from '../../redux/home';
 import './reserve.styles.scss';
+import { postReservation }  from '../../redux/reserve';
 
 const Reserve = () => {
     const [availableHouses, setAvailableHouses] = useState([]);
@@ -12,6 +13,8 @@ const Reserve = () => {
     const [selectedHouse, setSelectedHouse] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const dispatch = useDispatch();
 
@@ -32,7 +35,19 @@ const Reserve = () => {
                 houses.filter((house) => house.available === true)
             );
         }
+    }
 
+    const handlePost = (house) => {
+        setSelectedHouse(house);
+        const status = 'pending';
+        const house_id = house.id;
+        const date = startDate;
+        const user_id = user.id
+        const end_date = endDate;
+        const data = { status, date, user_id, house_id, end_date };
+        console.log(data)
+        dispatch(postReservation(data));
+        
     }
 
     const changeLayout = () => {
@@ -60,7 +75,10 @@ const Reserve = () => {
                                 <p>Price: {parseInt(house.price)} USD</p>
                                 <button
                                     className="btn"
-                                    onClick={() => setSelectedHouse(house)}
+                                    onClick={() => {
+                                        handlePost(house)
+                                    }
+                                    }
                                 >
                                     Select
                                 </button>

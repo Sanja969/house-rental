@@ -1,38 +1,34 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
 const url = "http://127.0.0.1:3000/reservations"
 
-const POST_RESERVATION = "POST_RESERVATION"
-
-const initialState = []
-
-const reserveReducer = (state = initialState, { type, payload }) => {
-    switch (type) {
-        case POST_RESERVATION:
-            return payload
-        default:
-            return state;
-    }
-}
-
-export const postReservation = (reservation) => async (dispatch) => {
-    const response = await fetch(url,
-        {
+export const postReservation = createAsyncThunk(
+    'reserve/postReservation',
+    async (reservation, thunkAPI) => {
+        await fetch(url, {
             method: 'POST',
-            body: JSON.stringify({
-                house_id: reservation.houseId,
-                user_id: reservation.userId,
-                date: reservation.date,
-                total_price: reservation.totalPrice
-            }),
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json'
             },
-        });
-    const reservationData = await response.json();
+            body: JSON.stringify(reservation)
+        })
+        const { reservations } = thunkAPI.getState().reserve
+        return reservations
+    }
+)
 
-    dispatch({
-        type: POST_RESERVATION,
-        payload: reservationData
-    })
-}
+export const reserveSlice = createSlice({
+    name: 'reserve',
+    initialState: {
+        reservations: []
+    },
+    reducers: {},
+    extraReducers: {
+        [postReservation.fulfilled]: (state, action) => {
+            state.reservations = action.payload
+        }
+    }
+    });
 
-export default reserveReducer;
+export const selectReservations = state => state.reserve.reservations
+export default reserveSlice.reducer;
