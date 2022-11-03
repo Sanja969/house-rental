@@ -54,6 +54,10 @@
     border-radius: 25px;
 }
 
+.back-mobile {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
   .back-home {
     display: none;
@@ -66,6 +70,17 @@
 
   .home-detail {
     margin: 20px;
+  }
+
+  .back-mobile {
+    display: flex;
+    height: 40px;
+    width: 50px;
+  }
+
+  .back-mobile-arrow {
+    color: #97BF0F;
+    width: 30px;
   }
 
  }
