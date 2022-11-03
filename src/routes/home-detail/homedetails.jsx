@@ -7,10 +7,12 @@ import { Link } from 'react-router-dom';
 
 export default function HomeDetail () {
 
-    const house = useSelector((state) => state.house);
+    const house = useSelector((state) => state.houses);
+
+    const navbar = useSelector(state => state.navbar)
     
     return (
-        <div className='home-detail'>
+        <div className={navbar? 'home-detail active' : 'home-detail'}>
             <Link to='/' className='back-mobile'>
                   < BiArrowBack  className='back-mobile-arrow' />
                </Link>
