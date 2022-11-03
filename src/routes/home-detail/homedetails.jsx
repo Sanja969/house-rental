@@ -19,11 +19,11 @@ export default function HomeDetail () {
                </div>
             </div>
             <div className="btn-detail">
-               <Link to='/' >
-                  < AiFillCaretLeft />
+               <Link to='/' className='back-home'>
+                  < AiFillCaretLeft  className='back-detail-arrow'/>
                </Link>
                <Link to='/reserve' >
-                  <button>Reserve</button>
+                  <button className='btn-reserve'>Reserve</button>
                </Link>
             </div>
         </div>
