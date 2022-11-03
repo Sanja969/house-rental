@@ -1,4 +1,4 @@
-$primary-color: #97BF0F;
+$primary-color: #97bf0f;
 
 .home-title,
 .home-paragraph,
@@ -12,7 +12,7 @@ $primary-color: #97BF0F;
 
 .dashes {
   margin-top: 40px;
-  color:grey;
+  color: grey;
 }
 
 .houses-box {
@@ -41,7 +41,7 @@ $primary-color: #97BF0F;
     }
   }
 
-  .back-arrow  {
+  .back-arrow {
     margin: auto 20px auto 40px;
     display: block;
   }
@@ -54,33 +54,50 @@ $primary-color: #97BF0F;
   .next-mob {
     display: none;
   }
-  
+
+  .btns {
+    display: none;
+  }
+
+  .hr-btn {
+    display: none;
+  }
 }
 
-@media screen and (max-width: 768px)  {
- .houses-box {
-     display: grid;
-     grid-template-columns: 1fr;
-     gap: 25px;
+@media screen and (max-width: 768px) {
+  .houses-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
 
-     .prev,
-     .next {
+    .btns {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .prev,
+    .next {
       display: none;
-     }
+    }
 
-     .next-mob {
-       display: block;
-       margin: auto;
-       font-size: 14px;
-       font-weight: 600;
-       line-height: 20px;
-       padding: 6px 16px;
-       position: relative;
-       text-align: center;
-       text-decoration: none;
-     }
+    .next-mob {
+      display: block;
+      margin: auto;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      padding: 6px 16px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+    }
 
- }
-
+    .hr-btn {
+      display: block;
+      height:2px;
+      border-width:0;
+      color:gray;
+      background-color:gray
+    }
+  }
 }
-

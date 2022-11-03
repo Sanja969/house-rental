@@ -51,8 +51,12 @@ const Home = () => {
         }
         <div className="next" onClick={next}>
         < AiFillCaretRight  className='next-arrow'/>
-        </div>   
-        <button className='next-mob'>Next</button>     
+        </div>
+        <hr className='hr-btn'/>
+        <div className='btns'>
+           <button className='next-mob' onClick={prev} >Back</button>  
+           <button className='next-mob' onClick={next} >Next</button> 
+        </div>  
       </div>
     </div>
 
