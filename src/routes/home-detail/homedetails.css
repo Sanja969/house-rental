@@ -55,7 +55,17 @@
 }
 
 @media screen and (max-width: 768px) {
-    body {
-      background-color: lightgreen;
-    }
+  .back-home {
+    display: none;
+   }
+
+  .details-item {
+    display: flex;
+    flex-direction: column;
   }
+
+  .home-detail {
+    margin: 20px;
+  }
+
+ }

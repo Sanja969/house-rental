@@ -14,8 +14,9 @@ export default function HomeDetail () {
                <img className='image-detail' src={house.image_data} alt={house.name} />
                <div className='detail-about'>
                    <h2>{house.name}</h2> <hr className='hr-detail'/>
-                   <p>Price: {house.price}</p><hr className='hr-detail'/>
+                   <p>Price: ${house.price} </p><hr className='hr-detail'/>
                    <p>{house.description}</p> <hr className='hr-detail'/>
+                   <p>Duration: 1 Month</p> <hr className='hr-detail'/>
                </div>
             </div>
             <div className="btn-detail">
