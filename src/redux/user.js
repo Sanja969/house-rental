@@ -2,14 +2,17 @@ const url1 = 'http://127.0.0.1:3000/users'
 const url2 = 'http://127.0.0.1:3000/auth/login'
 const POST_USER = 'POST_USER';
 const AUTH_USER = 'AUTH_USER';
-const initialState = localStorage.getItem('user');
+const LOGOUT = 'LOGOUT';
+const initialState = JSON.parse(localStorage.getItem('user'));
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case POST_USER:
-      return action;
+      return action.userData;
     case AUTH_USER:
-      return action;
+      return action.userData;
+    case LOGOUT:
+      return {};
     default:
       return state;
   }
@@ -58,4 +61,11 @@ export const authUser = (user) => async(dispatch) => {
     type: AUTH_USER,
     userData
   })
+}
+
+export const logout = () => {
+  localStorage.setItem('user', JSON.stringify({}))
+  return {
+    type: LOGOUT
+  }
 }

@@ -39,6 +39,3 @@ export const getHouses = () => async(dispatch) => {
         payload: houses
     })
 }
-
-// Path: src/redux/store.js
-// Compare this snippet from src/redux/store.js:

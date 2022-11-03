@@ -5,12 +5,13 @@ $primary-color: #97BF0F;
   flex-direction: column;
   align-items: center;
   margin-top: 40px;
-  width: 450px;
+  max-width: 450px;
+  width: 30em;
   padding: 0 30px;
 
   .home-image {
-    height: 300px;
-    width: 390px;
+    height: auto;
+    width: 95%;
     border-radius: 5%;
   }
   
@@ -26,19 +27,21 @@ $primary-color: #97BF0F;
     margin: 20px 0;
     color: grey;
     text-align: center;
+    height: 70px;
   }
 
   .home-links {
     display: flex;
-    width: 390px;
+    width: 100%;
     justify-content: space-around;
 
     a {
       cursor: pointer;
       background-color: $primary-color;
       border-radius: 5px;
-      padding: 10px 40px;
+      padding: 8px 30px;
       color: white;
+      text-align: center;
 
       &:hover {
         background-color: white;
