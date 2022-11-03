@@ -1,12 +1,12 @@
 .home-detail {
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
-  margin-top: 20px;
+  margin-left: 100px;
+  margin-top: 50px;
 }
 
 .home-detail.active {
-  margin-left: 350px;
+  margin-left: 27%;
 }
 
 .details-item {
