@@ -81,7 +81,6 @@ const Reserve = () => {
                 e.preventDefault();
                 setError(null);
                 handleSubmit(houses);
-                // availability(setError, setAvailableHouses, startDate, setLoading);
             }}>
                 <p className="text-danger mb-1 ">
                     {error && error.message}
