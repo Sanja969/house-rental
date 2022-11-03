@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Select from 'react-select'
 import { useDispatch, useSelector } from 'react-redux';
 import DatePicker from "react-datepicker";
 import * as BsIcons from "react-icons/bs";
@@ -11,15 +10,8 @@ const Reserve = () => {
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
     const [selectedHouse, setSelectedHouse] = useState(null);
-    const [selectedCity, setSelectedCity] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-
-    const cities = [
-        { value: 'New Jersey', label: 'New Jersey' },
-        { value: 'New York', label: 'New York' },
-        { value: 'California', label: 'California' },
-    ];
 
     const dispatch = useDispatch();
 
@@ -29,13 +21,18 @@ const Reserve = () => {
 
     const houses = useSelector((state) => state.house);
 
-    const handleSubmit = (value) => {
-        setAvailableHouses(value);
-        // setAvailableHouses(
-        //     value.filter((house) => {
-        //         return house.city === selectedCity.value;
-        //     })
-        // )
+    const handleSubmit = (houses) => {
+        if(!startDate || !endDate) {
+            setError('Please select a date range');
+            return;
+        } else {
+            setLoading(true);
+            setError(null);
+            setAvailableHouses(
+                houses.filter((house) => house.available === true)
+            );
+        }
+
     }
 
     const changeLayout = () => {
@@ -50,7 +47,7 @@ const Reserve = () => {
                 <h1>Choose your desired house</h1>
                 <p>Reservations will be depending on the availability of the houses</p>
                 <div className="houses">
-                    {houses.map((house) => (
+                    {availableHouses.map((house) => (
                         <div className="house" key={house.id}>
                             <div className="house-image">
                                 <img src={house.image_data} alt={house.name} />
@@ -80,7 +77,6 @@ const Reserve = () => {
             <p>Reservations will be depending on the availability of the houses</p>
             <form onSubmit={(e) => {
                 e.preventDefault();
-                setLoading(true);
                 setError(null);
                 handleSubmit(houses);
                 // availability(setError, setAvailableHouses, startDate, setLoading);
@@ -88,8 +84,6 @@ const Reserve = () => {
                 <p className="text-danger mb-1 ">
                     {error && error.message}
                 </p>
-                <p>Desired city of residence</p>
-                <Select className="selectbox" options={cities} onChange={setSelectedCity} />
                 <div className="date-picker">
                     <DatePicker
                         selectsRange={true}
