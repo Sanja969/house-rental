@@ -50,6 +50,37 @@ $primary-color: #97BF0F;
     margin: auto 40px auto 20px;
     display: block;
   }
+
+  .next-mob {
+    display: none;
+  }
+  
 }
 
+@media screen and (max-width: 768px)  {
+ .houses-box {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 25px;
+
+     .prev,
+     .next {
+      display: none;
+     }
+
+     .next-mob {
+       display: block;
+       margin: auto;
+       font-size: 14px;
+       font-weight: 600;
+       line-height: 20px;
+       padding: 6px 16px;
+       position: relative;
+       text-align: center;
+       text-decoration: none;
+     }
+
+ }
+
+}
 

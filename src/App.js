@@ -6,6 +6,7 @@ import Home from './routes/home/home.component.jsx';
 import HomeDetail from './routes/home-detail/homedetails.jsx';
 import Authentication from './routes/authentication/authentication.component';
 
+
 const App = () => (
   <Routes>
     <Route path="/" element={<Navigation />}>

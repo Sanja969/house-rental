@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 export default function HomeDetail () {
 
     const house = useSelector((state) => state.house);
-    console.log('house', house)
+    
     return (
         <div className='home-detail'>
             <Link to='/' className='back-mobile'>
-                  < BiArrowBack  className='back-mobile-arrow'/>
+                  < BiArrowBack  className='back-mobile-arrow' />
                </Link>
             <div className="details-item">
                <img className='image-detail' src={house.image_data} alt={house.name} />
