@@ -54,6 +54,8 @@ const Reserve = () => {
                             </div>
                             <div className="house-info">
                                 <h3>{house.name}</h3>
+                                <p>City: {house.city}</p>
+                                <p>Address: {house.adress}</p>
                                 <p>{house.description}</p>
                                 <p>Price: {parseInt(house.price)} USD</p>
                                 <button
