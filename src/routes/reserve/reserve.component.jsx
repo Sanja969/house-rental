@@ -50,6 +50,13 @@ const Reserve = () => {
                 <div className="confirm-box">
                     <div className="confirm">
                         <p className="confirm-text">{message}</p>
+                        <div className='confirm-details'>
+                            <h3>Your reservation details</h3>
+                            <p>House</p>
+                            <p>House address</p>
+                            <p>House Price</p>
+                            <p>Rent Period</p>
+                        </div>
                         <div className="confirm-btns">
                             <button className="confirm-btn" onClick={onConfirm}>Yes</button>
                             <button className="confirm-btn" onClick={onCancel}>No</button>
