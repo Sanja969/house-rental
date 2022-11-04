@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { confirm } from "react-confirm-box";
 import DatePicker from "react-datepicker";
 import * as BsIcons from "react-icons/bs";
@@ -16,6 +17,8 @@ const Reserve = () => {
     const [loading, setLoading] = useState(false);
 
     const user = JSON.parse(localStorage.getItem('user'));
+
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -58,6 +61,7 @@ const Reserve = () => {
         const result = await confirm("Are you sure you want to reserve this house?", options);
         if (result) {
             handlePost(selectedHouse)
+            navigate('/my-reservations');
         }
     }
 
@@ -98,7 +102,6 @@ const Reserve = () => {
                                     className="btn"
                                     onClick={() => {
                                         setSelectedHouse(house)
-                                        handlePost(house)
                                         console.log(selectedHouse)
                                         handleConfirm()
                                     }

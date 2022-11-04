@@ -189,6 +189,7 @@ $primary-font: 'Bebas Neue', cursive;;
     display: flex;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(5px);
 
     .confirm {
         width: 50%;
