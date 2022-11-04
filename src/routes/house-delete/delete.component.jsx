@@ -1,25 +1,25 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 import './delete.styles.scss'
+import DeletePopUp from './delete.confirmation'; 
+
 
 export default function  HouseDelete () {
 
     const house = useSelector(state => state.houses);
     const navbar = useSelector(state => state.navbar);
+    const [trigger, setTrigger] = useState(false);
+  
 
     const deletehandler = () => {   
-        fetch(`http://localhost:3000/houses/${house.id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
+        setTrigger(true);
     }
-    
+
+    const deleteConfirmed = (e) => {
+        console.log(e.target.id);
+    }
+
     return (
         <div className= {navbar? 'house-list-delete active' : 'house-list-delete'}>
             {
@@ -32,6 +32,7 @@ export default function  HouseDelete () {
                             <p>{house.description}</p>
                             <p>{house.price}</p>
                             <button className='delete-btn' onClick={deletehandler}>Delete</button>
+                            < DeletePopUp id={house.id} trigger={trigger}  setTrigger={setTrigger} deleteConfirmed = {deleteConfirmed} />
                             </div>
                         </div>
                     )
