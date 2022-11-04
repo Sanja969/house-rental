@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { confirm } from "react-confirm-box";
 import DatePicker from "react-datepicker";
 import * as BsIcons from "react-icons/bs";
-import { getHouses } from '../../redux/home';
 import './reserve.styles.scss';
 import { postReservation }  from '../../redux/reserve';
 
@@ -22,11 +21,7 @@ const Reserve = () => {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(getHouses());
-    }, []);
-
-    const houses = useSelector((state) => state.house);
+    const houses = useSelector((state) => state.houses);
 
     const handleSubmit = (houses) => {
         if(!startDate || !endDate) {
