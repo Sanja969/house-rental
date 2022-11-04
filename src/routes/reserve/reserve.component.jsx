@@ -52,17 +52,17 @@ const Reserve = () => {
         },
     }
 
-    const handleConfirm = async () => {
+    const handleConfirm = async (id) => {
         const result = await confirm("Are you sure you want to reserve this house?", options);
         if (result) {
-            handlePost(selectedHouse)
+            handlePost(id)
             navigate('/my-reservations');
         }
     }
 
-    const handlePost = (house) => {
+    const handlePost = (id) => {
         const status = 'pending';
-        const house_id = house.id;
+        const house_id = id;
         const date = startDate;
         const user_id = user.id
         const end_date = endDate;
@@ -98,7 +98,7 @@ const Reserve = () => {
                                     onClick={() => {
                                         setSelectedHouse(house)
                                         console.log(selectedHouse)
-                                        handleConfirm()
+                                        handleConfirm(house.id)
                                     }
                                     }
                                 >
