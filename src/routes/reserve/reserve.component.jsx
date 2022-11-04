@@ -57,7 +57,7 @@ const Reserve = () => {
     const handleConfirm = async () => {
         const result = await confirm("Are you sure you want to reserve this house?", options);
         if (result) {
-            dispatch(postReservation(selectedHouse, startDate, endDate, user.id));
+            handlePost(selectedHouse)
         }
     }
 
@@ -68,8 +68,7 @@ const Reserve = () => {
         const user_id = user.id
         const end_date = endDate;
         const data = { status, date, user_id, house_id, end_date };
-        // console.log(data)
-        // dispatch(postReservation(data));\ 
+        dispatch(postReservation(data));
     }
 
     const changeLayout = () => {
