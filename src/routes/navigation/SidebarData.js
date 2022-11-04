@@ -1,12 +1,9 @@
 import React from 'react';
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import * as IoIcons from "react-icons/io";
 import * as BsIcons from "react-icons/bs";
 import * as GiIcons from "react-icons/gi";
 import * as MdIcons from "react-icons/md";
-import * as CgIcons from "react-icons/cg";
-
 
 export const SidebarData = [
     {
@@ -22,8 +19,8 @@ export const SidebarData = [
         cName: "nav-text"
     },
     {
-        title: "My Reservation",
-        path: "/my-reservation",
+        title: "My Reservations",
+        path: "/my-reservations",
         icon: <BsIcons.BsJournalCheck />,
         cName: "nav-text"
     },
@@ -39,16 +36,4 @@ export const SidebarData = [
         icon: <MdIcons.MdFreeCancellation />,
         cName: "nav-text"
     },
-    {
-        title: "Sign In",
-        path: "/auth",
-        icon: <IoIcons.IoIosLogIn />,
-        cName: "nav-text"
-    },
-    {
-        title: "Sign Out",
-        path: "/auth/logout",
-        icon: <CgIcons.CgLogOut />,
-        cName: "nav-text"
-    }
 ];

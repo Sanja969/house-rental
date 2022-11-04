@@ -1,7 +1,5 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector} from 'react-redux';
-import {getHouses} from '../../redux/home'
+import React, { useState } from 'react';
+import { useSelector} from 'react-redux';
 import House from '../../components/house/house.component';
 import './home.styles.scss';
 import { AiFillCaretRight, AiFillCaretLeft } from "react-icons/ai";
@@ -9,13 +7,10 @@ import { AiFillCaretRight, AiFillCaretLeft } from "react-icons/ai";
 const Home = () => {
   const firstThree = {i: 0, n: 3,}
   const [indexes, setIndexes] = useState(firstThree);
- 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getHouses());
-  }, []);
 
-  const house = useSelector((state) => state.house);
+  const navbar = useSelector(state => state.navbar)
+
+  const house = useSelector((state) => state.houses);
 
   const display_houses = house.slice(indexes.i, indexes.n);
 
@@ -38,7 +33,7 @@ const Home = () => {
   };
 
   return (
-    <div className='home'>
+    <div className={navbar? 'home active' : 'home'}>
       <h1 className="home-title">Latest Houses</h1>
       <p className='home-paragraph'>Please select a house</p>
       <p className='dashes'>----------------------------</p>
@@ -51,7 +46,12 @@ const Home = () => {
         }
         <div className="next" onClick={next}>
         < AiFillCaretRight  className='next-arrow'/>
-        </div>        
+        </div>
+        <hr className='hr-btn'/>
+        <div className='btns'>
+           <button className='next-mob' onClick={prev} >Back</button>  
+           <button className='next-mob' onClick={next} >Next</button> 
+        </div>  
       </div>
     </div>
 

@@ -41,7 +41,8 @@ $primary-color: #97BF0F;
   top: 0;
   left: -100%;
   transition: 850ms;
-  margin-right: 1px solid grey;
+  z-index: 5;
+  border-right: 1px solid rgba(128, 128, 128, 0.163);
 }
 
 .active {
@@ -53,8 +54,15 @@ $primary-color: #97BF0F;
 .nav-menu-items {
   width: 100%;
 
-  span {
+  .link {
     margin-left: 10px;
+  }
+
+  button {
+    background-color: inherit;
+    border: none;
+    text-align: left;
+    padding: 0 !important;
   }
 }
 
@@ -108,7 +116,8 @@ $primary-color: #97BF0F;
     height: 60px;
     letter-spacing: 0.1rem;
     
-    a {
+    a,
+    button {
       font-family: 'Bebas Neue', cursive;
       font-weight: 200;
       font-size: 18px;
