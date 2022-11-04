@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { confirm } from "react-confirm-box";
 import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import * as BsIcons from "react-icons/bs";
 import './reserve.styles.scss';
 import { postReservation }  from '../../redux/reserve';
