@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { confirm } from "react-confirm-box";
 import DatePicker from "react-datepicker";
 import * as BsIcons from "react-icons/bs";
 import { getHouses } from '../../redux/home';
@@ -10,7 +11,7 @@ const Reserve = () => {
     const [availableHouses, setAvailableHouses] = useState([]);
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
-    const [selectedHouse, setSelectedHouse] = useState(null);
+    const [selectedHouse, setSelectedHouse] = useState('');
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
@@ -37,17 +38,38 @@ const Reserve = () => {
         }
     }
 
+    const options = {
+        render: (message, onConfirm, onCancel) => {
+            return (
+                <div className="confirm-box">
+                    <div className="confirm">
+                        <p className="confirm-text">{message}</p>
+                        <div className="confirm-btns">
+                            <button className="confirm-btn" onClick={onConfirm}>Yes</button>
+                            <button className="confirm-btn" onClick={onCancel}>No</button>
+                        </div>
+                    </div>
+                </div>
+            );
+        },
+    }
+
+    const handleConfirm = async () => {
+        const result = await confirm("Are you sure you want to reserve this house?", options);
+        if (result) {
+            dispatch(postReservation(selectedHouse, startDate, endDate, user.id));
+        }
+    }
+
     const handlePost = (house) => {
-        setSelectedHouse(house);
         const status = 'pending';
         const house_id = house.id;
         const date = startDate;
         const user_id = user.id
         const end_date = endDate;
         const data = { status, date, user_id, house_id, end_date };
-        console.log(data)
-        dispatch(postReservation(data));
-        
+        // console.log(data)
+        // dispatch(postReservation(data));\ 
     }
 
     const changeLayout = () => {
@@ -76,7 +98,10 @@ const Reserve = () => {
                                 <button
                                     className="btn"
                                     onClick={() => {
+                                        setSelectedHouse(house)
                                         handlePost(house)
+                                        console.log(selectedHouse)
+                                        handleConfirm()
                                     }
                                     }
                                 >
@@ -91,7 +116,6 @@ const Reserve = () => {
     }
 
     return (
-
         <div className="reserve">
             <h1>Choose your desired period and city of residence</h1>
             <p>Reservations will be depending on the availability of the houses</p>
@@ -126,7 +150,7 @@ const Reserve = () => {
                     }
                 </div>
             </form>    
-            </div>
+        </div>
     );
 }
 
