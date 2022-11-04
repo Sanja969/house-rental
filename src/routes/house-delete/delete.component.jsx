@@ -5,18 +5,20 @@ import './delete.styles.scss'
  const HouseDelete = () => {
 
     const house = useSelector(state => state.houses);
-    console.log(house);
+    const navbar = useSelector(state => state.navbar)
+  
     return (
-        <div>
+        <div className= {navbar? 'house-list-delete active' : 'house-list-delete'}>
             {
                 house.map((house, index) => {                 
                     return (
                         <div className='delete-container' key={index}>
-                            <img src={house.image_data} alt={house.name} />
+                            <img className='image-delete' src={house.image_data} alt={house.name} />
                             <div className='house-data'>
-                            <h1>{house.name}</h1>
+                            <h1>{house.name}</h1><hr />
                             <p>{house.description}</p>
-                            <p>{house.address}</p>
+                            <p>{house.price}</p>
+                            <button className='delete-btn'>Delete</button>
                             </div>
                         </div>
                     )
