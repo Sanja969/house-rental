@@ -91,8 +91,8 @@ const Reserve = () => {
                                 <h3>{house.name}</h3>
                                 <p>City: {house.city}</p>
                                 <p>Address: {house.adress}</p>
-                                <p>{house.description}</p>
                                 <p>Price: {parseInt(house.price)} USD</p>
+                                <p>{house.description}</p>
                                 <button
                                     className="btn"
                                     onClick={() => {
