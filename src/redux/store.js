@@ -10,7 +10,7 @@ export const store = configureStore({
     user: userReducer,
     houses: homeReducer,
     reservations: reservationsReducer,
-    navbar: navbarReducer
+    navbar: navbarReducer,
     reserve: reserveReducer
   },
 });
