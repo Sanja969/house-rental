@@ -25,6 +25,15 @@ $primary-font: 'Bebas Neue', cursive;;
     border-radius: 10px;
     gap: 50px;
 
+    .error {
+        background-color: red;
+        color: $secondary-color;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
     .back {
         position: absolute;
         top: 0;

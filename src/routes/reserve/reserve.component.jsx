@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { confirm } from "react-confirm-box";
@@ -23,9 +23,17 @@ const Reserve = () => {
 
     const houses = useSelector((state) => state.houses);
 
+    useEffect(() => {
+        setTimeout(() => {
+            setError(null);
+        }, 5000);
+    }, [
+        error
+    ]);
+
     const handleSubmit = (houses) => {
         if(!startDate || !endDate) {
-            setError('Please select a date range');
+            setError('Please select your desired staying period');
             return;
         } else {
             setLoading(true);
@@ -114,6 +122,7 @@ const Reserve = () => {
 
     return (
         <div className="reserve">
+            {error ? <div className="error">{error}</div> : null}
             <h1>Choose your desired period and city of residence</h1>
             <p>Reservations will be depending on the availability of the houses</p>
             <form onSubmit={(e) => {
