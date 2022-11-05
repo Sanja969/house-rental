@@ -12,7 +12,7 @@ $primary-font: 'Bebas Neue', cursive;;
 }
 
 .reserve {
-    background-color: $primary-color;
+    background-color:rgba(151, 191, 15, 0.9);
     padding: 4%;
     position: relative;
     width: 60%;
@@ -24,6 +24,7 @@ $primary-font: 'Bebas Neue', cursive;;
     z-index: 0;
     border-radius: 10px;
     gap: 50px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 
     .error {
         background-color: red;
