@@ -153,6 +153,7 @@ const Reserve = () => {
                         selectsRange={true}
                         placeholderText="Select your desired period"
                         startDate={startDate}
+                        minDate={new Date()}
                         endDate={endDate}
                         onChange={(update) => {
                           setDateRange(update);
