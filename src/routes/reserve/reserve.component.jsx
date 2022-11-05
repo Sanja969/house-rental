@@ -47,18 +47,24 @@ const Reserve = () => {
     }
 
     const options = {
+        dates: function () {
+            const check_in = new Date(startDate);
+            const check_out = new Date(endDate);
+            const days = (check_out - check_in) / (1000 * 60 * 60 * 24);
+            return days;
+        },
         render: (message, onConfirm, onCancel) => {
-        const house = selectedHouse 
             return (
                 <div className="confirm-box">
                     <div className="confirm">
                         <p className="confirm-text">{message}</p>
                         <div className='confirm-details'>
                             <h3>Your reservation details</h3>
-                            <p>{house.name}</p>
-                            <p>House Address: {house.adress}</p>
-                            <p>Daily Rent: {house.price}</p>
-                            <p></p>
+                            <p>{selectedHouse.name}</p>
+                            <p>City: {selectedHouse.city}</p>
+                            <p>Address: {selectedHouse.adress}</p>
+                            <p>Daily Price: {parseInt(selectedHouse.price)} USD</p>
+                            <p>Staying For: {options.dates()} Days</p>
                         </div>
                         <div className="confirm-btns">
                             <button className="confirm-btn" onClick={onConfirm}>Yes</button>
