@@ -11,7 +11,7 @@ const Reserve = () => {
     const [availableHouses, setAvailableHouses] = useState([]);
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
-    const [selectedHouse, setSelectedHouse] = useState('');
+    const [selectedHouse, setSelectedHouse] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
@@ -27,9 +27,11 @@ const Reserve = () => {
         setTimeout(() => {
             setError(null);
         }, 5000);
-    }, [
-        error
-    ]);
+    }, [error]);
+
+    useEffect(() => {
+        handleConfirm(selectedHouse)
+    }, [selectedHouse]);
 
     const handleSubmit = (houses) => {
         if(!startDate || !endDate) {
@@ -46,16 +48,17 @@ const Reserve = () => {
 
     const options = {
         render: (message, onConfirm, onCancel) => {
+        const house = selectedHouse 
             return (
                 <div className="confirm-box">
                     <div className="confirm">
                         <p className="confirm-text">{message}</p>
                         <div className='confirm-details'>
                             <h3>Your reservation details</h3>
-                            <p>House</p>
-                            <p>House address</p>
-                            <p>House Price</p>
-                            <p>Rent Period</p>
+                            <p>{house.name}</p>
+                            <p>House Address: {house.adress}</p>
+                            <p>Daily Rent: {house.price}</p>
+                            <p></p>
                         </div>
                         <div className="confirm-btns">
                             <button className="confirm-btn" onClick={onConfirm}>Yes</button>
@@ -67,10 +70,11 @@ const Reserve = () => {
         },
     }
 
-    const handleConfirm = async (id) => {
+    const handleConfirm = async (house) => {
+        setSelectedHouse(house);
         const result = await confirm("Are you sure you want to reserve this house?", options);
         if (result) {
-            handlePost(id)
+            handlePost(house.id)
             navigate('/my-reservations');
         }
     }
@@ -111,10 +115,7 @@ const Reserve = () => {
                                 <button
                                     className="btn"
                                     onClick={() => {
-                                        setSelectedHouse(house)
-                                        console.log(selectedHouse)
-                                        handleConfirm(house.id)
-                                    }
+                                        setSelectedHouse(house)                                    }
                                     }
                                 >
                                     Select
