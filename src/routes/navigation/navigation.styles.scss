@@ -48,6 +48,7 @@ $primary-color: #97BF0F;
 .active {
   left: 0;
   transition: 350ms;
+  z-index: 1;
 }
 
 .nav-menu-items {
