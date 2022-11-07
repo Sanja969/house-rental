@@ -10,14 +10,31 @@ export default function  HouseDelete () {
     const house = useSelector(state => state.houses);
     const navbar = useSelector(state => state.navbar);
     const [trigger, setTrigger] = useState(false);
+    const [selectedhouse, setSelectedHouse] = useState(0);
   
 
-    const deletehandler = () => {   
+    const deletehandler = (e) => {   
+        setSelectedHouse(e.target.id);
         setTrigger(true);
     }
 
     const deleteConfirmed = (e) => {
-        console.log(e.target.id);
+        console.log(e.target.value);
+        const url = `http://localhost:3000/houses/${e.target.value}`;
+        fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${navbar.token}`,
+            },
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+        }
+        )
+    
+
     }
 
     return (
@@ -31,8 +48,8 @@ export default function  HouseDelete () {
                             <h1>{house.name}</h1><hr />
                             <p>{house.description}</p>
                             <p>{house.price}</p>
-                            <button className='delete-btn' onClick={deletehandler}>Delete</button>
-                            < DeletePopUp id={house.id} trigger={trigger}  setTrigger={setTrigger} deleteConfirmed = {deleteConfirmed} />
+                            <button className='delete-btn' id={house.id} onClick={deletehandler}>Delete</button>
+                            < DeletePopUp selectedhouse={selectedhouse}  trigger={trigger}  setTrigger={setTrigger} deleteConfirmed = {deleteConfirmed} />
                             </div>
                         </div>
                     )

@@ -10,6 +10,8 @@ import MyReservations from './routes/my-reservations/my-reservations.component';
 import { getHouses } from './redux/home';
 import { getReservations } from './redux/reservations';
 import HouseDelete  from './routes/house-delete/delete.component';
+import Reserve from './routes/reserve/reserve.component';
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -26,6 +28,7 @@ const App = () => {
         <Route path="auth" element={<Authentication />} />
         <Route path="delete-house" element={<HouseDelete />} />
         <Route path="my-reservations" element={<MyReservations />} />
+        <Route path="reserve" element={<Reserve />} />
       </Route>
     </Routes>
   )

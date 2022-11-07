@@ -30,7 +30,7 @@ export const getHousesDetails = (id) => async(dispatch) => {
 }
 
 
-export const getHouses = () => async(dispatch) => { 
+export const getHouses = () => async(dispatch) => {
     const response = await fetch(url);
     const houses = await response.json();
     
