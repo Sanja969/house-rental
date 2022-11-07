@@ -11,7 +11,6 @@ function DeletePopUp(props) {
         <div>
             <div className="modal">
               <div className="modalContent">
-              <span className="close">×</span>
               <p className='delete-title'>Are you sure you want to delete your this House</p>
               <div className='yes-no-btn'>
                 <Link to='/'><button className="del" value={props.selectedhouse} onClick={props.deleteConfirmed}>Yes</button></Link>
