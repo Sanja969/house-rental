@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { confirm } from "react-confirm-box";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -142,7 +142,7 @@ const Reserve = () => {
         )
     }
 
-    return (
+    return !user.username ? <Navigate to="/auth" /> : (
         <div className="reserve">
             {error ? <div className="error">{error}</div> : null}
             <h1>Choose your desired period and city of residence</h1>
