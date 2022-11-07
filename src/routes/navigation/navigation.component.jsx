@@ -1,16 +1,21 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import * as FaIcons from "react-icons/fa";
 import brand from '../../logo.png';
 import './navigation.styles.scss';
-import { SidebarData } from './SidebarData';
 import { AiFillCaretLeft } from "react-icons/ai";
 import { triggerNav } from '../../redux/navbar';
+import { getHouse } from "../../redux/detail";
 import { logout } from '../../redux/user';
+
+import * as FaIcons from "react-icons/fa";
 import * as CgIcons from "react-icons/cg";
 import * as IoIcons from "react-icons/io";
-import { getHouse } from "../../redux/detail";
+import * as GiIcons from "react-icons/gi";
+import * as MdIcons from "react-icons/md";
+import * as AiIcons from "react-icons/ai";
+import * as BsIcons from "react-icons/bs";
+
 
 const Navigation = () => {
   const isSidebar = useSelector(state => state.navbar)
@@ -48,16 +53,34 @@ const Navigation = () => {
           </li>
           <div className='nav-body'>
             <div className='links'>
-              {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path} onClick={handleNav}>
-                    {item.icon}
-                    <span className="link" >{item.title}</span>
+              <li className='nav-text'>
+                <Link to='/' onClick={handleNav}>
+                <AiIcons.AiFillHome />
+                  <span className="link" >Home</span>
+                </Link>
+              </li>
+              <li className='nav-text'>
+                <Link to='/my-reservations' onClick={handleNav}>
+                  <BsIcons.BsJournalCheck />
+                  <span className="link" >My Reservations</span>
+                </Link>
+              </li>
+
+              { user.role === 'admin' ?
+               (<>
+                <li className='nav-text'>
+                  <Link to='/add-house' onClick={handleNav}>
+                    <GiIcons.GiHouseKeys />
+                    <span className="link" >Add House</span>
+                  </Link>
+                </li>             
+                <li className='nav-text'>
+                  <Link to='/delete-house' onClick={handleNav}>
+                    <MdIcons.MdFreeCancellation />
+                    <span className="link" >Delete House</span>
                   </Link>
                 </li>
-                )
-              })}
+              </> ) : ''}
               <li className='nav-text'>
                 <Link to='/reserve' onClick={() => handleReserve(false)}>
                   <FaIcons.FaCalendarCheck />
