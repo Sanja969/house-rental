@@ -6,7 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import * as BsIcons from "react-icons/bs";
 import './reserve.styles.scss';
-import { postReservation }  from '../../redux/reserve';
+import { saveReservation } from '../../redux/reservations';
 
 const Reserve = () => {
     const [availableHouses, setAvailableHouses] = useState([]);
@@ -24,6 +24,8 @@ const Reserve = () => {
 
     const houses = useSelector((state) => state.houses);
 
+    const house = useSelector((state) => state.detail);
+
     useEffect(() => {
         setTimeout(() => {
             setError(null);
@@ -39,6 +41,10 @@ const Reserve = () => {
         if(!startDate || !endDate) {
             setError('Please select your desired staying period');
             return;
+        }
+        else if(house)
+        {
+          handleConfirm(house);
         } else {
             setLoading(true);
             setError(null);
@@ -94,7 +100,7 @@ const Reserve = () => {
         const user_id = user.id
         const end_date = endDate;
         const data = { status, date, user_id, house_id, end_date };
-        dispatch(postReservation(data));
+        dispatch(saveReservation(data));
     }
 
     const changeLayout = () => {
@@ -167,7 +173,7 @@ const Reserve = () => {
                         </div>
                     ) : (                            
                         <button type="submit" className="btn">
-                            Available Houses
+                            {house ? 'Submit' : 'Available Houses'}
                         </button>
                     )
                     }

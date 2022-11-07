@@ -10,11 +10,18 @@ import { triggerNav } from '../../redux/navbar';
 import { logout } from '../../redux/user';
 import * as CgIcons from "react-icons/cg";
 import * as IoIcons from "react-icons/io";
+import { getHouse } from "../../redux/detail";
 
 const Navigation = () => {
   const isSidebar = useSelector(state => state.navbar)
   const user = useSelector(state => state.user)
   const dispatch = useDispatch();
+
+  const handleReserve = (house) => {
+    dispatch(getHouse(house));
+    dispatch(triggerNav());
+  }
+
   const handleNav = () => {
     dispatch(triggerNav());
   }
@@ -46,11 +53,17 @@ const Navigation = () => {
                 <li key={index} className={item.cName}>
                   <Link to={item.path} onClick={handleNav}>
                     {item.icon}
-                    {item.title === "Logout" ? <button className="link" onClick={handleLogout}>{item.title}</button> : <span className="link" >{item.title}</span>}
+                    <span className="link" >{item.title}</span>
                   </Link>
                 </li>
                 )
               })}
+              <li className='nav-text'>
+                <Link to='/reserve' onClick={() => handleReserve(false)}>
+                  <FaIcons.FaCalendarCheck />
+                  <span className="link" >Reserve</span>
+                </Link>
+              </li>
               <li className="nav-text">
                 {!user.username ? 
                   <a to='/auth' onClick={handleNav}>

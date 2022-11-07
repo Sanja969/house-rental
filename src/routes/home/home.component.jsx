@@ -10,12 +10,12 @@ const Home = () => {
 
   const navbar = useSelector(state => state.navbar)
 
-  const house = useSelector((state) => state.houses);
+  const houses = useSelector((state) => state.houses);
 
-  const display_houses = house.slice(indexes.i, indexes.n);
+  const display_houses = houses.slice(indexes.i, indexes.n);
 
   const next = () => {
-    if (indexes.n < house.length) {
+    if (indexes.n < houses.length) {
       setIndexes({i: indexes.i + 3, n: indexes.n + 3,});
     }
     else {

@@ -1,11 +1,20 @@
 import React from 'react'
-import { useSelector} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
 import './detail.styles.scss';
 import {  AiFillCaretLeft } from "react-icons/ai";
-import { Link } from 'react-router-dom';
 import Button from '../../components/button/button.component';
+import { getHouse } from '../../redux/detail';
 
 export default function Detail () {
+  const dispatch = useDispatch();
+
+  const handleReserve = (house) => {
+    dispatch(getHouse(house));
+    navigate('/reserve');
+  }
+
+  const navigate = useNavigate();
   const house = useSelector((state) => state.detail);
 
   const navbar = useSelector(state => state.navbar)
@@ -32,9 +41,7 @@ export default function Detail () {
           </table>
         </div>
       </div>
-      <Link to='/reserve' >
-        <Button buttonType="reserve">Reserve</Button>
-      </Link>
+      <Button buttonType="reserve" onClick={() => handleReserve(house)}>Reserve</Button>
       <Link to='/' className='prev'>
         < AiFillCaretLeft  className='back-arrow'/>
       </Link>
