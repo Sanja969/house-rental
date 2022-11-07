@@ -1,0 +1,17 @@
+.add-home-box {
+  margin-left: 10%;
+  margin-right: 10%;
+  max-width: 800px;
+  width: 90%;
+  padding: 30px;
+  background-color:#96bf0f95;
+  border-radius: 20px;
+
+  h3 {
+    color:#3c4c07;;
+  }
+}
+
+.add-home-box.active {
+  margin-left: 450px;
+}

@@ -27,7 +27,7 @@ export default function HomeDetail () {
             </div>
             <div className="btn-detail">
                <Link to='/' className='back-home'>
-                  < AiFillCaretLeft  className='back-detail-arrow'/>
+                  < AiFillCaretLeft  to='/' className='back-detail-arrow'/>
                </Link>
                <Link to='/reserve' >
                   <button className='btn-reserve'>Reserve</button>
@@ -36,3 +36,4 @@ export default function HomeDetail () {
         </div>
     )
 }
+

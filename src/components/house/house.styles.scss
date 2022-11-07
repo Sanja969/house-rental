@@ -29,30 +29,5 @@ $primary-color: #97BF0F;
     text-align: center;
     height: 70px;
   }
-
-  .home-links {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-
-    a {
-      cursor: pointer;
-      background-color: $primary-color;
-      border-radius: 5px;
-      padding: 8px 30px;
-      color: white;
-      text-align: center;
-
-      &:hover {
-        background-color: white;
-        color: black;
-        box-shadow: 0 0 1px 1px black;;
-      }
-    }
-
-    .detail-link {
-      background-color: black;
-    }
-  }
 }
 
