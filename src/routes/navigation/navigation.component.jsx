@@ -67,8 +67,9 @@ const Navigation = () => {
             <AiFillCaretLeft className='hide-nav' onClick={handleNav}/>
           </div>
         </ul>
-        
+        <footer>Copyright @sanja969/house-rental </footer>
       </nav>
+      
         <Outlet />
     </>
   );
