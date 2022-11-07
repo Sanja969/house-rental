@@ -34,6 +34,7 @@ const Reserve = () => {
         handleConfirm(selectedHouse)
     }, [selectedHouse]);
 
+
     const handleSubmit = (houses) => {
         if(!startDate || !endDate) {
             setError('Please select your desired staying period');
@@ -56,7 +57,7 @@ const Reserve = () => {
         },
         render: (message, onConfirm, onCancel) => {
             return (
-                <div className="confirm-box">
+                <div className="confirm-container">
                     <div className="confirm">
                         <p className="confirm-text">{message}</p>
                         <div className='confirm-details'>
