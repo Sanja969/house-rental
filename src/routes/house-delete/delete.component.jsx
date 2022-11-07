@@ -19,7 +19,6 @@ export default function  HouseDelete () {
     }
 
     const deleteConfirmed = (e) => {
-        console.log(e.target.value);
         const url = `http://localhost:3000/houses/${e.target.value}`;
         fetch(url, {
             method: 'DELETE',
