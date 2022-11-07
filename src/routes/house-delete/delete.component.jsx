@@ -21,17 +21,16 @@ export default function  HouseDelete () {
   return !user.username ? <Navigate to="/auth" /> : (
     <>{user.role !== 'admin' ? <Navigate to="/" /> :
       (<div className= {navbar? 'house-list-delete active' : 'house-list-delete'}>
+        <h2>Delete house</h2>
         {
           houses.map((house) => {                 
             return (
               <div className='delete-container' key={house.id}>
                 <img className='image-delete' src={house.image_data} alt={house.name} />
-                <div className='house-data'>
-                <h1>{house.name}</h1><hr />
-                <p>{house.description}</p>
-                <p>{house.price}</p>
-                <button className='delete-btn' id={house.id} onClick={() => handle(house)} >Delete</button>
-                < DeletePopUp trigger={trigger}  setTrigger={setTrigger} />
+                <div>
+                  <h2>{house.name}</h2>
+                  <button className='delete-btn' id={house.id} onClick={() => handle(house)} >Delete</button>
+                  < DeletePopUp trigger={trigger}  setTrigger={setTrigger} />
                 </div>
               </div>
             )

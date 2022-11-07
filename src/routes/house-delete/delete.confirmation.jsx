@@ -16,13 +16,13 @@ function DeletePopUp({ trigger, setTrigger }) {
 
     return trigger ? (
         <div>
-            <div className="modal">
-              <div className="modalContent">
-              <p className='delete-title'>Are you sure you want to delete your this House</p>
-              <div className='yes-no-btn'>
-                <Link to='/'><button className="del" onClick={() => handleDelete(house.id)}>Yes</button></Link>
-                 <button className="no" onClick = {() => setTrigger(false)}>No</button>
-              </div>
+            <div className="conf-box">
+              <div className="conf-content">
+                <p className='delete-title'>Are you sure you want to delete your this House?</p>
+                <div className='answer'>
+                  <Link to='/'><button className="yes" onClick={() => handleDelete(house.id)}>Yes</button></Link>
+                  <button className="no" onClick = {() => setTrigger(false)}>No</button>
+                </div>
               </div>
             </div>
         </div>

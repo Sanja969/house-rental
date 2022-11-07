@@ -1,6 +1,10 @@
 .reservation {
   display: flex;
-  margin: 20px 0;
+  padding: 20px;
+
+  &:nth-child(even) {
+    background-color: #96bf0f45;
+  }
 
   img {
     width: 220px;
