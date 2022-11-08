@@ -1,15 +1,18 @@
 const url = "http://127.0.0.1:3000/houses"
 const GET_HOUSES = "GET_HOUSES"
 const POST_HOUSE = "POST_HOUSE"
+const DELETE_HOUSE = "DELETE_HOUSE"
 
 const initialState = []
 
-const homeReducer = (state = initialState, action) => {
-  switch (action.type) {
+const homeReducer = (state = initialState, {type, payload}) => {
+  switch (type) {
     case GET_HOUSES:
-      return action.payload
+      return payload
     case POST_HOUSE:
-      return [...state, action.payload]
+      return [...state, payload]
+    case DELETE_HOUSE:
+      return payload
     default:
       return state;
   }
@@ -51,3 +54,18 @@ export const saveHouse = (house) => async(dispatch) => {
     payload: house,
   })
 };
+
+export const deleteHouse = (id) => async(dispatch) =>{
+  const response  = await fetch(`${url}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+  })
+  const houses = await response.json();
+
+  dispatch({
+    type: DELETE_HOUSE,
+    payload: houses,
+  })
+}

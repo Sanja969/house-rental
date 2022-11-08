@@ -3,10 +3,22 @@
   padding: 10px 20px 10px 100px;
 
   h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.658);
   }
 }
 
 .reservations.active {
   margin-left: 350px;
+}
+
+@media screen and (max-width: 912px) {
+  .reservations.active {
+    margin-left: 0;
+  }
+
+  .reservations {
+    padding: 0 10px;
+  }
 }

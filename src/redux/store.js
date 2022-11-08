@@ -3,7 +3,6 @@ import userReducer from './user';
 import homeReducer from './home';
 import reservationsReducer from './reservations';
 import navbarReducer from './navbar';
-import reserveReducer from './reserve';
 import detailReducer from './detail';
 
 export const store = configureStore({
@@ -12,7 +11,6 @@ export const store = configureStore({
     houses: homeReducer,
     reservations: reservationsReducer,
     navbar: navbarReducer,
-    reserve: reserveReducer,
     detail: detailReducer,
   },
 });

@@ -11,6 +11,10 @@ $primary-font: 'Bebas Neue', cursive;;
     transform: translate(-50%, -50%);
 }
 
+.reserve.active {
+  margin-left: 450px;
+}
+
 .reserve {
     background-color:#96bf0f95;
     padding: 4%;
@@ -51,6 +55,10 @@ $primary-font: 'Bebas Neue', cursive;;
         color: #fff;
         font-weight: 200;
         font-family: $primary-font;
+    }
+
+    p {
+      color: grey;
     }
 
     form {
@@ -260,5 +268,30 @@ $primary-font: 'Bebas Neue', cursive;;
         }
       }
     }
+  }
+
+  @media screen and (max-width: 912px) {
+    .reserve.active {
+      margin-left: 0;
+    }
+
+    .reserve {
+      width: 90%;
+    }
+
+    .back {
+      top: 3px !important;
+      font-size: 1.3rem;
+      width: 40px;
+      height: 40px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .confirm {
+    width: 90% !important;
+  }
   }
 

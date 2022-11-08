@@ -10,12 +10,12 @@ const Home = () => {
 
   const navbar = useSelector(state => state.navbar)
 
-  const house = useSelector((state) => state.houses);
+  const houses = useSelector((state) => state.houses);
 
-  const display_houses = house.slice(indexes.i, indexes.n);
+  const display_houses = houses.slice(indexes.i, indexes.n);
 
   const next = () => {
-    if (indexes.n < house.length) {
+    if (indexes.n < houses.length) {
       setIndexes({i: indexes.i + 3, n: indexes.n + 3,});
     }
     else {
@@ -49,8 +49,12 @@ const Home = () => {
         </div>
         <hr className='hr-btn'/>
         <div className='btns'>
-           <button className='next-mob' onClick={prev} >Back</button>  
-           <button className='next-mob' onClick={next} >Next</button> 
+            <div className="prev-mob" onClick={prev}>
+              < AiFillCaretLeft className="back-arrow"/>
+            </div> 
+            <div className="next-mob" onClick={next}>
+              < AiFillCaretRight  className='next-arrow'/>
+            </div>
         </div>  
       </div>
     </div>
