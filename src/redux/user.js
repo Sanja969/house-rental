@@ -3,7 +3,7 @@ const url2 = 'https://x-house-book.herokuapp.com/auth/login'
 const POST_USER = 'POST_USER';
 const AUTH_USER = 'AUTH_USER';
 const LOGOUT = 'LOGOUT';
-const initialState = JSON.parse(localStorage.getItem('user'));
+const initialState = JSON.parse(localStorage.getItem('user')) || {};
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
