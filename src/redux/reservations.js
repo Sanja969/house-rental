@@ -1,4 +1,4 @@
-const url = "http://127.0.0.1:3000/reservations"
+const url = "https://x-house-book.herokuapp.com/reservations"
 
 const GET_RESERVATIONS = "GET_RESERVATIONS"
 const SAVE_RESERVATION = "SAVE_RESERVATIONS"

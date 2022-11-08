@@ -1,4 +1,4 @@
-const url = "http://127.0.0.1:3000/houses"
+const url = "https://x-house-book.herokuapp.com/houses"
 const GET_HOUSES = "GET_HOUSES"
 const POST_HOUSE = "POST_HOUSE"
 const DELETE_HOUSE = "DELETE_HOUSE"
