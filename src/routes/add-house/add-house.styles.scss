@@ -14,3 +14,14 @@
 .add-home-box.active {
   margin-left: 450px;
 }
+
+@media screen and (max-width: 912px) {
+  .add-home-box {
+    margin: 50px 5%;
+    width: 90%;
+  }
+
+  .add-home-box.active {
+    margin-left: 0;
+  }
+}

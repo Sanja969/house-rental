@@ -124,4 +124,28 @@
   }
 }
 
+@media screen and (max-width: 912px) {
+  .house-list-delete.active {
+    margin-left: 0;
+  }
 
+  .house-list-delete {
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  .delete-container {
+    flex-direction: column;
+
+    div {
+
+      h2 {
+        text-align: start;
+      }
+    }
+  }
+
+  .conf-content {
+    width: 95%;
+  }
+}

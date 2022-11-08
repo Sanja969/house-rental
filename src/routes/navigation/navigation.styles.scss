@@ -141,3 +141,10 @@ footer {
   position: absolute;
   bottom: 20px;
 }
+
+@media screen and (max-width: 912px) {
+  .menu-bars {
+    margin-left: 10px;
+  }
+
+}

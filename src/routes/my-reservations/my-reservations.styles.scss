@@ -12,3 +12,13 @@
 .reservations.active {
   margin-left: 350px;
 }
+
+@media screen and (max-width: 912px) {
+  .reservations.active {
+    margin-left: 0;
+  }
+
+  .reservations {
+    padding: 0 10px;
+  }
+}

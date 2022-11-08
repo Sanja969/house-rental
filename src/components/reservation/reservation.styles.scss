@@ -19,3 +19,14 @@
     }
   }
 }
+
+@media screen and (max-width: 912px) {
+  .reservation {
+    margin-left: 0;
+    flex-direction: column;
+
+    div {
+      padding: 10px 0;
+    }
+  }
+}

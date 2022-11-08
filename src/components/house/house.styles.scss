@@ -35,3 +35,14 @@ $primary-color: #97BF0F;
   }
 }
 
+@media screen and (max-width: 768px) {
+  .house-box {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+  .home-image {
+    width: 90% !important;
+    margin-left: 2.5%;
+  }
+}
+

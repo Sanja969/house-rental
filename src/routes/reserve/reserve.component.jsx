@@ -26,6 +26,8 @@ const Reserve = () => {
 
     const house = useSelector((state) => state.detail);
 
+    const navbar = useSelector(state => state.navbar);
+
     useEffect(() => {
         setTimeout(() => {
             setError(null);
@@ -143,44 +145,44 @@ const Reserve = () => {
     }
 
     return !user.username ? <Navigate to="/auth" /> : (
-        <div className="reserve">
-            {error ? <div className="error">{error}</div> : null}
-            <h1>Choose your desired period and city of residence</h1>
-            <p>Reservations will be depending on the availability of the houses</p>
-            <form onSubmit={(e) => {
-                e.preventDefault();
-                setError(null);
-                handleSubmit(houses);
-            }}>
-                <p className="text-danger mb-1 ">
-                    {error && error.message}
-                </p>
-                <div className="date-picker">
-                    <DatePicker
-                        selectsRange={true}
-                        placeholderText="Select your desired period"
-                        startDate={startDate}
-                        minDate={new Date()}
-                        endDate={endDate}
-                        onChange={(update) => {
-                          setDateRange(update);
-                        }}
-                        withPortal
-                    />
-                    {loading ? (
-                        <div className="spinner-border text-primary" role="status">
-                            <span className="sr-only">Loading...</span>
-                        </div>
-                    ) : (                            
-                        <button type="submit" className="btn">
-                            {house ? 'Submit' : 'Available Houses'}
-                        </button>
-                    )
-                    }
-                </div>
-            </form>    
-        </div>
-    );
+      <div className={navbar ? "reserve active" : "reserve"}>
+        {error ? <div className="error">{error}</div> : null}
+        <h1>Choose your desired period and city of residence</h1>
+        <p>Reservations will be depending on the availability of the houses</p>
+        <form onSubmit={(e) => {
+            e.preventDefault();
+            setError(null);
+            handleSubmit(houses);
+        }}>
+            <p className="text-danger mb-1 ">
+                {error && error.message}
+            </p>
+            <div className="date-picker">
+                <DatePicker
+                    selectsRange={true}
+                    placeholderText="Select your desired period"
+                    startDate={startDate}
+                    minDate={new Date()}
+                    endDate={endDate}
+                    onChange={(update) => {
+                      setDateRange(update);
+                    }}
+                    withPortal
+                />
+                {loading ? (
+                    <div className="spinner-border text-primary" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </div>
+                ) : (                            
+                    <button type="submit" className="btn">
+                        {house ? 'Submit' : 'Available Houses'}
+                    </button>
+                )
+                }
+            </div>
+        </form>    
+    </div>
+  );
 }
 
 export default Reserve;
