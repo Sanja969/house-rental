@@ -2,6 +2,10 @@
   "name": "house-rental",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.2.0",
+    "npm": "6.14.5"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
     "@testing-library/jest-dom": "^5.16.5",
