@@ -98,6 +98,14 @@
     margin-top: 3rem;
     flex-direction: row;
 
+    .yes {
+      background-color: #f96007;
+    }
+
+    .no {
+      background-color: green;
+    }
+
     .yes,
     .no {
       padding: 20px 30px;
@@ -112,14 +120,6 @@
       &:hover {
         opacity:0.5;
       }
-    }
-
-    .yes {
-      background-color: #f96007;
-    }
-
-    .no {
-      background-color: green;
     }
   }
 }
@@ -138,7 +138,6 @@
     flex-direction: column;
 
     div {
-
       h2 {
         text-align: start;
       }

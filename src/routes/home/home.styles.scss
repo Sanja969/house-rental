@@ -86,6 +86,14 @@ $primary-color: #97bf0f;
       display: none;
     }
 
+    .prev-mob {
+      border-radius: 0 25px 25px 0;
+    }
+    
+    .next-mob {
+      border-radius: 25px 0 0 25px;
+    }
+
     .prev-mob,
     .next-mob {
       display: flex;
@@ -96,14 +104,6 @@ $primary-color: #97bf0f;
       &:hover {
         background-color: #f5f5f5;
       }
-    }
-
-    .prev-mob {
-      border-radius: 0 25px 25px 0;
-    }
-    
-    .next-mob {
-      border-radius: 25px 0 0 25px;
     }
 
     .hr-btn {
