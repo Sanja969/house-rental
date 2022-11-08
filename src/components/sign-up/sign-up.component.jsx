@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { saveUser } from '../../redux/user';
 import FormInput from '../form-input/form-input.component';
@@ -9,6 +9,8 @@ import './sign-up.styles.scss';
 const SignUp = () => {
 
   const navigate = useNavigate();
+
+  const user = useSelector(state => state.user);
 
   const gotToHome = () => {
     navigate('/');
@@ -65,6 +67,7 @@ const SignUp = () => {
         <FormInput type="password" name="passwordConf" onChange={handleChange} label="Confirm Password" value={passwordConf} required />
         <Button type="submit" onClick={submitUser}>SIGN UP</Button>
       </form>
+      {user.errors ? <p className='error-user'>{user.errors[0]}</p> : ''}
     </div>
   );
 };

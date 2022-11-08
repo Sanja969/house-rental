@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
@@ -11,6 +11,8 @@ const SignIn = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const user = useSelector(state => state.user);
 
   const logIn = (email, password) => dispatch(authUser({
     email,
@@ -55,6 +57,7 @@ const SignIn = () => {
         <FormInput type="text" name="email" onChange={handleChange} label="Email" required value={email} />
         <FormInput type="password" name="password" onChange={handleChange} label="Password" required value={password} />
         <Button buttonType="logIn" onClick={submitUser} type="submit">Sign In</Button>
+        {user.error ? <p className="error-user">You pull wrong email or pasword</p> :''}
       </form>
     </div>
   );
