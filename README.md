@@ -18,12 +18,12 @@ Main features of this website are:
 
 ## Link to back-end App 
 - Gitgub link [click](https://github.com/Sanja969/house-rental-api)
-- Api heroku link [click] (https://x-house-book.herokuapp.com/houses)
+- Api heroku link [click](https://x-house-book.herokuapp.com/houses)
 
 
 ## Live Demo
-
 [Live Demo Link](https://x-house.herokuapp.com/)
+
 
 - Kanban Board [link](https://github.com/users/Sanja969/projects/7)
 
