@@ -26,6 +26,8 @@ Main features of this website are:
 <p style="color: red"> Login with admin user to see add and delete house functionalities: 
 - <b>email: user@example.com password: admin1234</b></p>
 
+![Alt text](/src/assets/auth-desktop.png?raw=true)
+
 
 ## Kanban Board 
 [link](https://github.com/users/Sanja969/projects/7)
