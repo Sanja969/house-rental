@@ -39,7 +39,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-- In order to get a copy of this project you need to download it from [link] (https://github.com/Sanja969/house-rental.git)
+- In order to get a copy of this project you need to download it from [link](https://github.com/Sanja969/house-rental.git)
 - Extract the zipped file and open it in your code editor
 
 ### Install and start
