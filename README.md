@@ -19,7 +19,7 @@ Main features of this website are:
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://x-house.herokuapp.com/)
 
 - Kanban Board [link](https://github.com/users/Sanja969/projects/7)
 
