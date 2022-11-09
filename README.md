@@ -26,7 +26,16 @@ Main features of this website are:
 <p style="color: red"> Login with admin user to see add and delete house functionalities: 
 - <b>email: user@example.com password: admin1234</b></p>
 
-![Alt text](/src/assets/auth-desktop.png?raw=true)
+# src/assets
+desktopleft">
+  <img src="/src/assets/auth-desktop.png" alt="star wars" width="200">
+  <img src="/src/assets/detail-desktop.png" alt="star wars" width="200">
+  <img src="/src/assets/reservations-desktop.png" alt="star wars" width="200">
+  <img src="/src/assets/reserve-desktop.png" alt="star wars" width="200">
+  <img src="/src/assets/reserve2-desktop.png" alt="star wars" width="200">
+
+</p>
+
 
 
 ## Kanban Board 
