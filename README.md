@@ -28,10 +28,14 @@ Main features of this website are:
 
 # src/assets
 <p float="left">
-  <img src="/src/assets/auth-desktop.png" alt="book-home" width="800">
+  <img style="border:1px solid black" src="/src/assets/auth-desktop.png" alt="book-home" width="800">
+  <img src="/src/assets/home-desktop.png" alt="book-home" width="800">
   <img src="/src/assets/detail-desktop.png" alt="book-home" width="800">
   <img src="/src/assets/reservations-desktop.png" alt="book-home" width="800">
-  <img src="/src/assets/reserve2-desktop.png" alt="book-home" width="800">
+  <img src="/src/assets/auth-mobile.png" alt="book-home" width="200">
+  <img src="/src/assets/detail-mobile.png" alt="book-home" width="200">
+  <img src="/src/assets/home-mobile.png" alt="book-home" width="200">
+  <img src="/src/assets/reservations-mob.png" alt="book-home" width="200">
 </p>
 
 
