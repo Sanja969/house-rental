@@ -19,9 +19,7 @@ Main features of this website are:
 
 ## Live Demo
 
-[Live Demo Link](Not yet)
-
-Kanban Board:
+[Live Demo Link]()
 Kanban Board [link](https://github.com/users/Sanja969/projects/7)
 
 ## Getting Started
