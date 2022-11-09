@@ -27,7 +27,7 @@ Main features of this website are:
 - <b>email: user@example.com password: admin1234</b></p>
 
 # src/assets
-desktopleft">
+<p float="left">
   <img src="/src/assets/auth-desktop.png" alt="star wars" width="200">
   <img src="/src/assets/detail-desktop.png" alt="star wars" width="200">
   <img src="/src/assets/reservations-desktop.png" alt="star wars" width="200">
