@@ -1,0 +1,49 @@
+$primary-color: #97BF0F;
+
+.house-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  max-width: 450px;
+  width: 30em;
+  padding: 0 30px;
+
+  .home-image {
+    height: 15em;
+    width: 95%;
+    border-radius: 5%;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  
+  .home-name {
+    align-items: center;
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .home-description {
+    margin: 20px 0;
+    color: grey;
+    text-align: center;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .house-box {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+
+  .home-image {
+    width: 90% !important;
+    margin-left: 2.5%;
+  }
+}
+

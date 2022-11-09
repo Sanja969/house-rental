@@ -1,0 +1,25 @@
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+body, html {
+  width: 100vw;
+  min-width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+ }

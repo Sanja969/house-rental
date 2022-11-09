@@ -1,0 +1,63 @@
+$primary-color: #97BF0F;
+
+.button-container {
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+
+  &.log-in {
+    background-color: $primary-color;
+    color: white;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+
+  &.reserve-btn {
+    border-radius: 50px;
+    background-color: $primary-color;
+    position: relative;
+    top: 50px;
+    transform: translateX(-95px/2 - 100px);
+    left: 100%;
+    width: 100px;
+    margin-bottom: 100px;
+
+    &:hover {
+      border: none;
+      background-color: #f5f5f5;
+    }
+  }
+
+  &.inverted {
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      border: none;
+    }
+  }
+}

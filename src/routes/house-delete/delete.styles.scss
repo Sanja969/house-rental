@@ -1,0 +1,151 @@
+.house-list-delete {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin-left: 100px;
+  gap: 10px;
+
+  h2 {
+    margin: 30px 0;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.622);
+  }
+}
+
+.delete-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 0;
+
+  &:nth-child(even) {
+    background-color: #96bf0f2b;
+  }
+
+  &:nth-child(odd) {
+    border: 1px solid rgba(128, 128, 128, 0.335);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    h2 {
+      text-align: end;
+    }
+  }
+
+  .image-delete {
+    height: 150px;
+    width: 250px;
+    border-radius: 5%;
+  }
+}
+
+.house-list-delete.active {
+  margin-left: 450px;
+}
+
+.delete-btn {
+  background-color: #f96007;
+  width: 120px;
+  border-radius: 5px;
+  padding: 8px 30px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  &:hover {
+    background-color: rgb(218, 13, 13);
+  }
+}
+
+.conf-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(58, 162, 35, 0.507);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conf-content {
+  margin-top: 100px;
+  width: 500px;
+  height: 300px;
+  padding: 32px;
+  background-color: rgba(241, 247, 241, 0.15);
+  border: 1px solid rgba(128, 128, 128, 0.435);
+  border-radius: 10px;
+
+  .delete-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+  }
+
+  .answer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+    flex-direction: row;
+
+    .yes {
+      background-color: #f96007;
+    }
+
+    .no {
+      background-color: green;
+    }
+
+    .yes,
+    .no {
+      padding: 20px 30px;
+      display: inline-block;
+      width: 100px;
+      color: white;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+
+      &:hover {
+        opacity:0.5;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 912px) {
+  .house-list-delete.active {
+    margin-left: 0;
+  }
+
+  .house-list-delete {
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  .delete-container {
+    flex-direction: column;
+
+    div {
+      h2 {
+        text-align: start;
+      }
+    }
+  }
+
+  .conf-content {
+    width: 95%;
+  }
+}

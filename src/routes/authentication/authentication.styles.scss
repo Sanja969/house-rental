@@ -1,0 +1,25 @@
+.auth-container {
+  display: flex;
+  width: 900px;
+  justify-content: space-between;
+  margin: 30px auto;
+}
+
+.auth-container.active {
+  margin-left: 450px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+    gap: 50px;
+    margin: 10px !important;
+    width: 100%;
+  }
+
+  .auth-container.active {
+    margin: 10px !important;
+  }
+  
+}

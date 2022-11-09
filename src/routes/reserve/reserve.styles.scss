@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+$primary-color: #97BF0F;
+$secondary-color: #fff;
+$primary-font: 'Bebas Neue', cursive;;
+
+@mixin centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.reserve.active {
+  margin-left: 450px;
+}
+
+.reserve {
+    background-color:#96bf0f95;
+    padding: 4%;
+    position: relative;
+    width: 60%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    border-radius: 10px;
+    gap: 50px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+
+    .error {
+        background-color: red;
+        color: $secondary-color;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        color: $secondary-color;
+        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    h1 {
+        color: #fff;
+        font-weight: 200;
+        font-family: $primary-font;
+    }
+
+    p {
+      color: grey;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+
+        input {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            font-family: $primary-font;
+        }
+
+    }
+
+    .date-picker {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        justify-content: center;
+        
+        svg {
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .date {
+            width: 45%;
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 1.2rem;
+            font-family: $primary-font;
+        }
+
+        input {
+          width: 200px;
+          text-align: center;
+        }
+    }
+
+    .btn {
+        width: 30%;
+        padding: 5px 10px;
+        border-radius: 10px;
+        outline: none;
+        font-size: 1.2rem;
+        font-family: $primary-font;
+        background-color: $secondary-color;
+        color: $primary-color;
+        cursor: pointer;
+        transition: 0.3s;
+        border: 2px solid $primary-color;
+
+        &:hover {
+            background-color: $primary-color;
+            color: $secondary-color;
+            border: 1px solid $secondary-color;
+        }
+    } 
+
+    .houses {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+
+        .house {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: $secondary-color;
+            color: #000;
+            font-family: $primary-font;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: $primary-color;
+                color: $secondary-color;
+                border: 1px solid $secondary-color;
+            }
+
+            .house-image {
+                width: 100%;
+                height: 200px;
+                border-radius: 10px;
+                background-color: $primary-color;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .house-info {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+
+                .house-name {
+                    font-size: 1.5rem;
+                    font-weight: 200;
+                }
+
+                .house-price {
+                    font-size: 1.5rem;
+                    font-weight: 200;
+                }
+            }
+        }
+
+    }
+}
+
+.confirm-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+
+  .confirm-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px; 
+  }
+
+  .confirm {
+    width: 60%;
+    height: 80%;
+    background-color: $secondary-color;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    padding: 20px;
+
+    .confirm-text {
+      font-size: 1.5rem;
+      font-family: $primary-font;
+      font-weight: 200;
+    }
+
+    .confirm-btns {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+
+        .confirm-btn {
+          width: 40%;
+          padding: 5px 10px;
+          border-radius: 10px;
+          outline: none;
+          font-size: 1.2rem;
+          font-family: $primary-font;
+          background-color: $primary-color;
+          color: $secondary-color;
+          cursor: pointer;
+          transition: 0.3s;
+          border: 2px solid $secondary-color;
+
+          &:hover {
+              background-color: $secondary-color;
+              color: $primary-color;
+              border: 1px solid $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 912px) {
+    .reserve.active {
+      margin-left: 0;
+    }
+
+    .reserve {
+      width: 90%;
+    }
+
+    .back {
+      top: 3px !important;
+      font-size: 1.3rem;
+      width: 40px;
+      height: 40px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .confirm {
+    width: 90% !important;
+  }
+  }
+
