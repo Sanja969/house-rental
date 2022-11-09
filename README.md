@@ -31,31 +31,24 @@ Main features of this website are:
   <kbd>
     <img src="/src/assets/home-desktop.png" alt="book-home" width="800">
   </kbd>
-  <br />
   <kbd>
     <img src="/src/assets/auth-desktop.png" alt="book-home" width="800">
   </kbd>
-    <br />
   <kbd>
     <img src="/src/assets/detail-desktop.png" alt="book-home" width="800">
   </kbd>
-    <br />
   <kbd>
     <img src="/src/assets/reservations-desktop.png" alt="book-home" width="800">
   </kbd>
-    <br />
   <kbd>
     <img src="/src/assets/auth-mobile.png" alt="book-home" width="185">
   </kbd>
-    <br />
   <kbd>
     <img src="/src/assets/detail-mobile.png" alt="book-home" width="185">
   </kbd>
-    <br />
   <kbd>
     <img src="/src/assets/home-mobile.png" alt="book-home" width="185">
   </kbd>
-    <br />
   <kbd>
     <img src="/src/assets/reservations-mob.png" alt="book-home" width="185">
   </kbd>
