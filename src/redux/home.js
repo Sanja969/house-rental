@@ -31,7 +31,7 @@ export const getHouses = () => async(dispatch) => {
 }
 
 export const saveHouse = (house) => async(dispatch) => {
-  await fetch(url,
+  const response = await fetch(url,
     {
       method: 'POST',
       body: JSON.stringify({
@@ -49,9 +49,11 @@ export const saveHouse = (house) => async(dispatch) => {
       },
     });
 
+    const json = await response.json();
+
   dispatch({
     type: POST_HOUSE,
-    payload: house,
+    payload: json,
   })
 };
 
