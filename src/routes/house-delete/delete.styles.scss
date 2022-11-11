@@ -73,8 +73,8 @@
   height: 100%;
   background-color: rgba(58, 162, 35, 0.507);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 .conf-content {
@@ -85,6 +85,9 @@
   background-color: rgba(241, 247, 241, 0.15);
   border: 1px solid rgba(128, 128, 128, 0.435);
   border-radius: 10px;
+  display: flex;
+  justify-content: space-between !important;
+  align-items: space-between !important;
 
   .delete-title {
     font-size: 1.5rem;
@@ -98,6 +101,8 @@
     gap: 1rem;
     margin-top: 3rem;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 
     .yes {
       background-color: #f96007;
