@@ -1,4 +1,4 @@
-const url = "https://x-house-book.herokuapp.com/houses"
+const url = "https://house-rental.fly.dev/houses"
 const GET_HOUSES = "GET_HOUSES"
 const POST_HOUSE = "POST_HOUSE"
 const DELETE_HOUSE = "DELETE_HOUSE"

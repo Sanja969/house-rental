@@ -1,5 +1,5 @@
-const url1 = 'https://x-house-book.herokuapp.com/users'
-const url2 = 'https://x-house-book.herokuapp.com/auth/login'
+const url1 = 'https://house-rental.fly.dev/users'
+const url2 = 'https://house-rental.fly.dev/auth/login'
 const POST_USER = 'POST_USER';
 const AUTH_USER = 'AUTH_USER';
 const LOGOUT = 'LOGOUT';

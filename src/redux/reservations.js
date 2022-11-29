@@ -1,4 +1,4 @@
-const url = "https://x-house-book.herokuapp.com/reservations"
+const url = "https://house-rental.fly.dev/reservations"
 
 const GET_RESERVATIONS = "GET_RESERVATIONS"
 const SAVE_RESERVATION = "SAVE_RESERVATIONS"
