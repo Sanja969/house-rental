@@ -11,10 +11,7 @@ Main features of this website are:
 
 ## Built With
 
-- Programming Languages: HTML, CSS, JavaScript.
-- Frameworks: React, Redux and Bootstrap.
-- Code Editor: VS Code.
-- Technologies: Git, Gitflow, Linters, Github, PostgreSql, Rspec, Capybara, Robocop
+- Technologies: React, Redux, JS6, SASS
 
 ## Link to back-end App 
 - Gitgub link [click](https://github.com/Sanja969/house-rental-api)
